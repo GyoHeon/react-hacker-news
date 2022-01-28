@@ -14,10 +14,4 @@ function Home() {
   );
 }
 
-const TestMenu = styled.div`
-  background-color: violet;
-  width: 100%;
-  height: 768px;
-`;
-
 export default Home;

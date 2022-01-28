@@ -5,9 +5,9 @@ function Viewport({ children }: any) {
 }
 
 const View = styled.div`
-  background-color: violet;
   width: 100%;
   height: 768px;
+  border: 1px solid violet;
 `;
 
 export default Viewport;
