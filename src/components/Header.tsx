@@ -44,10 +44,10 @@ const Head = styled.header`
     }
   }
   section {
-    margin-right: 16.52px;
+    margin-right: 12px;
     img {
-      padding: 5px;
-      margin: 18px 0;
+      padding: 9px;
+      margin: 12px 0;
     }
   }
 `;
