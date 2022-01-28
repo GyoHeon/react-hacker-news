@@ -9,7 +9,7 @@ const Card = styled.div`
   width: 200px;
   height: 300px;
   border-radius: 24px;
-  margin: 54px 88px 73px 87px;
+  margin: 0 88px 73px 87px;
 `;
 
 export default TotalRankCard;

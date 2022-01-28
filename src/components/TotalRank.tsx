@@ -7,7 +7,9 @@ function TotalRank() {
       <h1>
         Total <br /> Ranking 5 Now
       </h1>
-      <TotalRankCard />
+      <section>
+        <TotalRankCard />
+      </section>
     </Total>
   );
 }
@@ -23,6 +25,11 @@ const Total = styled.section`
     height: 56px;
     font-size: 28px;
     margin: 32px 20px 24px;
+  }
+  section {
+    height: 427px;
+    padding-top: 54px;
+    background-color: aqua;
   }
 `;
 
