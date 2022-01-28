@@ -12,17 +12,9 @@ function Router() {
       <MobileFrame>
         <Routes>
           <Route path="/" element={<Home />} />
-        </Routes>
-        <Routes>
           <Route path="/News" element={<News />} />
-        </Routes>
-        <Routes>
           <Route path="/Show" element={<Show />} />
-        </Routes>
-        <Routes>
           <Route path="/Ask" element={<Ask />} />
-        </Routes>
-        <Routes>
           <Route path="/Jobs" element={<Jobs />} />
         </Routes>
       </MobileFrame>
