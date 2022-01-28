@@ -1,5 +1,13 @@
+import styled from "styled-components";
+
+const TestMenu = styled.div`
+  width: 375px;
+  height: 768px;
+  background-color: tomato;
+`;
+
 function Menu() {
-  return <h1>Menu</h1>;
+  return <TestMenu>Menu</TestMenu>;
 }
 
 export default Menu;
