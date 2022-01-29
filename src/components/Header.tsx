@@ -6,10 +6,7 @@ function Header() {
     <Head>
       <Link to="/">
         <img src="image/logo.png" alt="Hacker news logo" />
-        <div>
-          <span>React</span>
-          <h2>Hacker News</h2>
-        </div>
+        <h1>ReHacker News</h1>
       </Link>
       <section>
         <img src="image/themeChangeBtn.png" alt="Theme change buton" />
@@ -25,22 +22,19 @@ const Head = styled.header`
   display: flex;
   justify-content: space-between;
   a {
-    width: 180px;
+    width: 145px;
     padding: 13px 1px 13.73px 20px;
     display: flex;
+    align-items: center;
     img {
-      margin: 4px 8px 4px 0;
+      margin: 4px 9.48px 4px 0;
     }
-    div {
-      span {
-        font-size: 10px;
-        font-weight: 300;
-        opacity: 0.4;
-      }
-      h2 {
-        font-size: 18px;
-        font-weight: 300;
-      }
+    h1 {
+      font-size: 14px;
+      font-weight: 500;
+      font-style: italic;
+      width: 60px;
+      color: ${(props) => props.theme.textCommentColor};
     }
   }
   section {
