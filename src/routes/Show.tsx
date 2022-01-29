@@ -8,6 +8,7 @@ function Show() {
     <Viewport>
       <Header />
       <Nav />
+      SHOW
     </Viewport>
   );
 }

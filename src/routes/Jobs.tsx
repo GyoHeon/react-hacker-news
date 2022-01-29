@@ -8,6 +8,7 @@ function Jobs() {
     <Viewport>
       <Header />
       <Nav />
+      JOBS
     </Viewport>
   );
 }

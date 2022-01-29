@@ -8,6 +8,7 @@ function Ask() {
     <Viewport>
       <Header />
       <Nav />
+      ASK
     </Viewport>
   );
 }

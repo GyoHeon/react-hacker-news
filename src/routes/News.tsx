@@ -8,6 +8,7 @@ function News() {
     <Viewport>
       <Header />
       <Nav />
+      NEWS
     </Viewport>
   );
 }
