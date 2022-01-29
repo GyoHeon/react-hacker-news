@@ -8,7 +8,7 @@ function Show() {
     <Viewport>
       <Header />
       <Nav />
-      SHOW
+      SHOW-page
     </Viewport>
   );
 }
