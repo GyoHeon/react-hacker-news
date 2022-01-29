@@ -15,11 +15,9 @@ function TotalRank() {
 }
 
 const Total = styled.section`
-  background-color: tomato;
   width: 100%;
   height: 539px;
   h1 {
-    background-color: cornflowerblue;
     display: inline-block;
     width: 335px;
     height: 56px;
@@ -29,7 +27,7 @@ const Total = styled.section`
   section {
     height: 427px;
     padding-top: 54px;
-    background-color: aqua;
+    background-color: #f2f3f7;
   }
 `;
 
