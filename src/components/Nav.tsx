@@ -40,7 +40,7 @@ const BottomLine = styled.div`
   width: 100%;
   height: 1px;
   margin-top: 4px;
-  background-color: #f0f0f6;
+  background-color: ${(props) => props.theme.accentColor};
 `;
 const Navbar = styled.nav`
   width: 335px;
