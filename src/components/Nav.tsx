@@ -45,7 +45,7 @@ const BottomLine = styled.div`
 const Navbar = styled.nav`
   width: 335px;
   height: 40px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   a {
     color: ${(props) => props.theme.textMenuColor};
     text-align: center;
@@ -53,7 +53,7 @@ const Navbar = styled.nav`
     display: inline-block;
     width: 83.75px;
     height: 24px;
-    margin: 12px 0 4px 0;
+    margin: 17px 0 4px 0;
     &.selected {
       color: ${(props) => props.theme.accentColor};
       font-weight: 500;
@@ -62,6 +62,7 @@ const Navbar = styled.nav`
       height: 2px;
       background-color: ${(props) => props.theme.accentColor};
       border-radius: 2px 2px 0 0;
+      margin-top: 3px;
     }
   }
 `;
