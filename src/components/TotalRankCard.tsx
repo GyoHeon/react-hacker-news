@@ -33,6 +33,7 @@ const Card = styled.div`
     font-size: 18px;
     font-weight: 500;
     margin-top: 12px;
+    line-height: 24px;
     color: ${(props) => props.theme.textAuthorColor};
   }
   span {
@@ -50,7 +51,7 @@ const Shadow = styled.div`
   height: 300px;
   border-radius: 24px;
   background: #ffffff;
-  margin: 0 88px 73px 87px;
+  margin: -10px 88px 73px 77px;
   filter: blur(20px);
   position: absolute;
 `;
