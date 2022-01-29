@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-hacker-news/static/js/main.8debf5d9.js",
+    "main.js": "/react-hacker-news/static/js/main.b8fb128b.js",
     "index.html": "/react-hacker-news/index.html",
-    "main.8debf5d9.js.map": "/react-hacker-news/static/js/main.8debf5d9.js.map"
+    "main.b8fb128b.js.map": "/react-hacker-news/static/js/main.b8fb128b.js.map"
   },
   "entrypoints": [
-    "static/js/main.8debf5d9.js"
+    "static/js/main.b8fb128b.js"
   ]
 }
