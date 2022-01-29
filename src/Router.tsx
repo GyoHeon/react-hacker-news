@@ -8,7 +8,7 @@ import Show from "./routes/Show";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <MobileFrame>
         <Routes>
           <Route path="/" element={<Home />} />
