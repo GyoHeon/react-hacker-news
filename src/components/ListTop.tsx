@@ -36,7 +36,8 @@ const Top = styled.section`
       align-items: center;
       margin-right: 4px;
       img {
-        width: 20px;
+        width: 23px;
+        height: 23px;
         padding: 7px 6px 7px 6px;
       }
     }
