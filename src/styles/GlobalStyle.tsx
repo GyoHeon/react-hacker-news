@@ -21,6 +21,9 @@ time, mark, audio, video, button {
   font: inherit;
   vertical-align: baseline;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {

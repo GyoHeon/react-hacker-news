@@ -44,10 +44,10 @@ function Ask() {
     <Viewport>
       <Header />
       <Nav />
-      <List>
-        {loading
+      <List datas={articleDatas}>
+        {/* {loading
           ? "wait"
-          : articleDatas?.map((x) => <li key={x.id}>{x.title}</li>)}
+          : articleDatas?.map((x) => <li key={x.id}>{x.title}</li>)} */}
       </List>
     </Viewport>
   );

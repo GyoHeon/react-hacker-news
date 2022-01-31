@@ -1,18 +1,26 @@
 import styled from "styled-components";
 
-function ListItem() {
+type AData = {
+  by: string;
+  id: number;
+  score: number;
+  text: string;
+  title: string;
+};
+
+function ListItem({ by, score, title }: AData) {
   return (
     <Li>
-      <h1>Apple contributes to OBS to support screen capture using </h1>
+      <h1>{title}</h1>
       <section>
         <div className="author">
-          <span>bryanrasmussen</span>
+          <span>{by}</span>
           <img src="image/rightArrow.png" alt="right arrow" />
         </div>
         <div className="side">
           <div>
             <img src="image/point.png" alt="comment" />
-            1000
+            {score}
           </div>
           <div>
             <img src="image/comment.png" alt="comment" />
@@ -30,6 +38,7 @@ const Li = styled.li`
   border-radius: 16px;
   padding: 16px 16px 12px;
   margin-bottom: 12px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   h1 {
     font-size: 18px;
     line-height: 24px;
