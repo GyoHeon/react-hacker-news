@@ -8,6 +8,7 @@ const View = styled.div`
   width: 100%;
   height: 768px;
   border: 1px solid violet;
+  background-color: #ffffff;
 `;
 
 export default Viewport;

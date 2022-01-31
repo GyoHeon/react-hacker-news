@@ -40,6 +40,7 @@ body {
   line-height: 1;
   font-family: 'Roboto', 'sans-serif';
   color: ${(props) => props.theme.textColor};
+  background-color: #e5e5e5;
 }
 menu, ol, ul {
   list-style: none;
