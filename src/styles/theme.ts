@@ -1,6 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
 export const whiteTheme: DefaultTheme = {
+  backgroundColor: "#ffffff",
   textColor: "#111111",
   textMenuColor: "#999999",
   textAuthorColor: "#767676",
