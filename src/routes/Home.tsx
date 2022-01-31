@@ -8,7 +8,7 @@ function Home() {
   return (
     <Viewport>
       <Header />
-      <Nav />
+      <Nav isHome={true} />
       <TotalRank />
     </Viewport>
   );

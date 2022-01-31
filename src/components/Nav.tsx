@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-function Nav() {
+type INav = {
+  isHome?: boolean;
+};
+
+function Nav({ isHome = false }: INav) {
   return (
     <Navbar>
       <NavLink
@@ -9,28 +13,28 @@ function Nav() {
         to="/News"
       >
         News
-        <BottomLine />
+        <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
         to="/Show"
       >
         Show
-        <BottomLine />
+        <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
         to="/Ask"
       >
         Ask
-        <BottomLine />
+        <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
         to="/Jobs"
       >
         Jobs
-        <BottomLine />
+        <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
     </Navbar>
   );
@@ -40,7 +44,10 @@ const BottomLine = styled.div`
   width: 100%;
   height: 1px;
   margin-top: 4px;
-  background-color: ${(props) => props.theme.accentColor};
+  background-color: ${(props) => props.theme.listColor};
+  &.isHome {
+    background-color: ${(props) => props.theme.accentColor};
+  }
 `;
 const Navbar = styled.nav`
   width: 335px;
@@ -54,6 +61,7 @@ const Navbar = styled.nav`
     width: 83.75px;
     height: 24px;
     margin: 17px 0 4px 0;
+
     &.selected {
       color: ${(props) => props.theme.accentColor};
       font-weight: 500;
