@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import ListTop from "./ListTop";
+import ListItem from "./ListItem";
 
 function List({ children }: any) {
   return (
     <>
       <ListTop />
-      <Ul>{children}</Ul>
+      <Ul>
+        <ListItem />
+        {children}
+      </Ul>
     </>
   );
 }
