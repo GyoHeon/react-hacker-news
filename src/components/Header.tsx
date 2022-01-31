@@ -10,7 +10,7 @@ function Header() {
       </Link>
       <section>
         <img src="image/themeChangeBtn.png" alt="Theme change buton" />
-        <img src="image/infoBtn.png" alt="Question button" />
+        <img src="image/infoBtn.png" alt="Info button" />
       </section>
     </Head>
   );
