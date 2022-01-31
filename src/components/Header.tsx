@@ -35,6 +35,7 @@ const Head = styled.header`
       line-height: 16px;
       font-weight: 500;
       font-style: italic;
+      margin-top: 1px;
       color: ${(props) => props.theme.textCommentColor};
     }
   }

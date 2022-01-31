@@ -43,7 +43,7 @@ function Nav({ isHome = false }: INav) {
 const BottomLine = styled.div`
   width: 100%;
   height: 1px;
-  margin-top: 4px;
+  margin-top: 7px;
   background-color: ${(props) => props.theme.listColor};
   &.isHome {
     background-color: ${(props) => props.theme.accentColor};
@@ -57,11 +57,11 @@ const Navbar = styled.nav`
     color: ${(props) => props.theme.textMenuColor};
     text-align: center;
     font-size: 18px;
+    line-height: 24px;
     display: inline-block;
     width: 83.75px;
     height: 24px;
-    margin: 17px 0 4px 0;
-
+    margin: 8px 0 4px 0;
     &.selected {
       color: ${(props) => props.theme.accentColor};
       font-weight: 500;
@@ -70,7 +70,7 @@ const Navbar = styled.nav`
       height: 2px;
       background-color: ${(props) => props.theme.accentColor};
       border-radius: 2px 2px 0 0;
-      margin-top: 3px;
+      margin-top: 6px;
     }
   }
 `;
