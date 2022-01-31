@@ -3,14 +3,14 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 
-function News() {
+function Article() {
   return (
     <Viewport>
       <Header />
       <Nav />
-      NEWS
+      Article
     </Viewport>
   );
 }
 
-export default News;
+export default Article;

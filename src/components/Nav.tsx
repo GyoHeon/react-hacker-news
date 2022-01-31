@@ -10,16 +10,9 @@ function Nav({ isHome = false }: INav) {
     <Navbar>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
-        to="/News"
+        to="/Article"
       >
-        News
-        <BottomLine className={isHome ? "isHome" : ""} />
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "selected" : "")}
-        to="/Show"
-      >
-        Show
+        Article
         <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
       <NavLink
@@ -27,6 +20,13 @@ function Nav({ isHome = false }: INav) {
         to="/Ask"
       >
         Ask
+        <BottomLine className={isHome ? "isHome" : ""} />
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "selected" : "")}
+        to="/Show"
+      >
+        Show
         <BottomLine className={isHome ? "isHome" : ""} />
       </NavLink>
       <NavLink
