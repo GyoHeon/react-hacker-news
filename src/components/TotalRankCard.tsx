@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 type ADatas = {
-  by: string;
+  idx: number;
   title: string;
+  by: string;
 };
 
-function TotalRankCard({ title, by }: ADatas) {
+function TotalRankCard({ idx, title, by }: ADatas) {
   return (
     <>
       <Shadow />
       <Card>
-        <h2>01</h2>
+        <h2>0{`${idx + 1}`}</h2>
         <p>{title}</p>
         <span>{by}</span>
       </Card>

@@ -28,9 +28,9 @@ function TotalRank({ datas }: any) {
           slidesPerView={1}
           pagination={{ clickable: true }}
         >
-          {datas.map((data: ADatas) => (
-            <SwiperSlide>
-              <TotalRankCard title={data.title} by={data.by} />
+          {datas.map((data: ADatas, idx: number) => (
+            <SwiperSlide key={data.id}>
+              <TotalRankCard idx={idx} title={data.title} by={data.by} />
             </SwiperSlide>
           ))}
         </StyledSwiper>
