@@ -5,11 +5,13 @@ import Viewport from "../components/Viewport";
 import TotalRank from "../components/TotalRank";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
+import { useTheme } from "../context/ThemeProvider";
 
 function Home() {
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
+  const [ThemeMode, toggleTheme] = useTheme();
 
   useEffect(() => {
     (async () => {
@@ -28,7 +30,7 @@ function Home() {
 
   return (
     <Viewport>
-      <Header />
+      <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav isHome={true} />
       <TotalRank datas={articleDatas} />
     </Viewport>

@@ -4,12 +4,14 @@ import Viewport from "../components/Viewport";
 import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
+import { useTheme } from "../context/ThemeProvider";
 
 function Show() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [sortedNew, setSortedNew] = useState(false);
+  const [ThemeMode, toggleTheme] = useTheme();
 
   useEffect(() => {
     (async () => {
@@ -37,7 +39,7 @@ function Show() {
 
   return (
     <Viewport>
-      <Header />
+      <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
       <List datas={articleDatas}>
         {/* {loading

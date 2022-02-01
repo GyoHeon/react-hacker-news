@@ -4,10 +4,12 @@ import Viewport from "../components/Viewport";
 import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
+import { useTheme } from "../context/ThemeProvider";
 
 function Jobs() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
+  const [ThemeMode, toggleTheme] = useTheme();
 
   useEffect(() => {
     (async () => {
@@ -25,7 +27,7 @@ function Jobs() {
 
   return (
     <Viewport>
-      <Header />
+      <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
       <List datas={articleDatas}>
         {/* {loading
