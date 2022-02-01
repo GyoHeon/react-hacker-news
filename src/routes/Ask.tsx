@@ -8,20 +8,32 @@ import { fetchNums, fetchArticles } from "../api";
 function Ask() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
+  const [articleNums, setArticleNums] = useState<number[]>([]);
+  const [sortedNew, setSortedNew] = useState(false);
 
   useEffect(() => {
     (async () => {
       const json: any = await fetchNums("ask");
-
-      const objArr: any = await fetchArticles(json, 0, 10);
-
-      setArticleDatas(objArr);
-
-      console.log(objArr);
-      console.log("data:", articleDatas);
+      setArticleNums(json);
       setLoading(false);
     })();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const sortNums: number[] = [...articleNums];
+      if (sortedNew) {
+        sortNums.sort((a: number, b: number) => b - a);
+      }
+      const objArr: any = (await fetchArticles(sortNums, 0, 10)).map((data) => {
+        if (data.title.slice(0, 6) === "Ask HN") {
+          data.title = data.title.slice(8);
+        }
+        return data;
+      });
+      setArticleDatas(objArr);
+    })();
+  }, [loading, sortedNew]);
 
   return (
     <Viewport>
