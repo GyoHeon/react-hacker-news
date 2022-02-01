@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 type AData = {
   by: string;
+  descendants: number;
   id: number;
   score: number;
   text: string;
   title: string;
 };
 
-function ListItem({ by, score, title }: AData) {
+function ListItem({ by, score, title, descendants }: AData) {
   return (
     <Li>
       <h1>{title}</h1>
@@ -24,7 +25,7 @@ function ListItem({ by, score, title }: AData) {
           </div>
           <div className="comment">
             <img alt="comment" />
-            1000
+            {descendants}
           </div>
         </div>
       </section>

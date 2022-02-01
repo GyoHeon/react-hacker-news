@@ -4,6 +4,7 @@ import ListItem from "./ListItem";
 
 type ADatas = {
   by: string;
+  descendants: number;
   id: number;
   score: number;
   text: string;
@@ -18,6 +19,7 @@ function List({ datas }: any) {
         {datas.map((data: ADatas) => (
           <ListItem
             key={data.id}
+            descendants={data.descendants}
             by={data.by}
             id={data.id}
             score={data.score}
