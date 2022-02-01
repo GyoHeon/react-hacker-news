@@ -41,10 +41,10 @@ function Nav({ isHome = false }: INav) {
 }
 
 const BottomLine = styled.div`
+  background-color: ${(props) => props.theme.nav.line};
   width: 100%;
   height: 1px;
   margin-top: 7px;
-  background-color: ${(props) => props.theme.nav.line};
   &.isHome {
     background-color: ${(props) => props.theme.accentColor};
   }
@@ -67,8 +67,8 @@ const Navbar = styled.nav`
       font-weight: 500;
     }
     &.selected div {
-      height: 2px;
       background-color: ${(props) => props.theme.accentColor};
+      height: 2px;
       border-radius: 2px 2px 0 0;
       margin-top: 6px;
     }

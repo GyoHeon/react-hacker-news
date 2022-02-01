@@ -29,11 +29,7 @@ function Jobs() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
-      <List datas={articleDatas}>
-        {/* {loading
-          ? "wait"
-          : articleDatas?.map((x) => <li key={x.id}>{x.title}</li>)} */}
-      </List>
+      <List datas={articleDatas}></List>
     </Viewport>
   );
 }

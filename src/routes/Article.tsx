@@ -36,11 +36,7 @@ function Article() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
-      <List datas={articleDatas} sorted={sortedNew}>
-        {/* {loading
-          ? "wait"
-          : articleDatas?.map((x) => <li key={x.id}>{x.title}</li>)} */}
-      </List>
+      <List datas={articleDatas} sorted={sortedNew}></List>
     </Viewport>
   );
 }

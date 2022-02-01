@@ -56,18 +56,18 @@ const Total = styled.section`
   }
 `;
 const StyledSwiper = styled(Swiper)`
-  height: 427px;
   padding-top: ${(props) => props.theme.totalRank.paddingTop}px;
   background-color: ${(props) => props.theme.totalRank.backrgoundColor};
+  height: 427px;
   .swiper-pagination-bullet {
+    background: ${(props) => props.theme.totalRank.swiperNoActive};
     width: 5px;
     height: 5px;
-    background: ${(props) => props.theme.totalRank.swiperNoActive};
     opacity: 1;
   }
   .swiper-pagination-bullet-active {
-    border-radius: 5px;
     background: ${(props) => props.theme.accentColor};
+    border-radius: 5px;
   }
 `;
 

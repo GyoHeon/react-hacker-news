@@ -35,17 +35,17 @@ function ListItem({ by, score, title, descendants }: AData) {
 
 const Li = styled.li`
   background-color: ${(props) => props.theme.listItem.backgroundColor};
+  box-shadow: ${(props) => props.theme.listItem.shadow};
   width: 335px;
   border-radius: 16px;
   padding: 16px 16px 12px;
   margin: 0 20px 12px;
-  box-shadow: ${(props) => props.theme.listItem.shadow};
   h1 {
     color: ${(props) => props.theme.textColor};
+    border-bottom: 1px solid ${(props) => props.theme.listItem.line};
     font-size: 18px;
     line-height: 24px;
     padding-bottom: 12px;
-    border-bottom: 1px solid ${(props) => props.theme.listItem.line};
   }
   section {
     margin-top: 8px;
@@ -54,11 +54,11 @@ const Li = styled.li`
     justify-content: space-between;
     align-items: center;
     .author {
+      color: ${(props) => props.theme.listItem.textAuthor};
       display: flex;
       align-items: center;
       font-size: 12px;
       line-height: 16px;
-      color: ${(props) => props.theme.listItem.textAuthor};
       img {
         width: 6px;
         margin-left: 6px;

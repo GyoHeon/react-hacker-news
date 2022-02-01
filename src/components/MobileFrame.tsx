@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+function MobileFrame({ children }: any) {
+  return <MobileFullFrame>{children}</MobileFullFrame>;
+}
+
 const MobileFullFrame = styled.div`
   max-width: 375px;
   width: 100%;
@@ -7,9 +11,5 @@ const MobileFullFrame = styled.div`
   height: 100%;
   margin: 100px auto 0;
 `;
-
-function MobileFrame({ children }: any) {
-  return <MobileFullFrame>{children}</MobileFullFrame>;
-}
 
 export default MobileFrame;
