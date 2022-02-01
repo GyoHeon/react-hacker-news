@@ -6,9 +6,9 @@ type obj = {
   end: number;
 };
 
-export async function fetchNums(field: string = `topstories`) {
-  const json: any = await fetch(`${BASE_URL}/${field}.json`).then((response) =>
-    response.json()
+export async function fetchNums(field: string = `top`) {
+  const json: any = await fetch(`${BASE_URL}/${field}stories.json`).then(
+    (response) => response.json()
   );
   return json;
 }

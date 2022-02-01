@@ -5,13 +5,13 @@ import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 
-function Article() {
+function Ask() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
 
   useEffect(() => {
     (async () => {
-      const json: any = await fetchNums();
+      const json: any = await fetchNums("ask");
 
       const objArr: any = await fetchArticles(json, 0, 10);
 
@@ -36,4 +36,4 @@ function Article() {
   );
 }
 
-export default Article;
+export default Ask;
