@@ -17,12 +17,12 @@ export const whiteTheme: DefaultTheme = {
 };
 
 export const darkTheme: DefaultTheme = {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#222325",
   textColor: "#111111",
   textMenuColor: "#999999",
   textAuthorColor: "#919191",
   textCommentColor: "#505050",
-  accentColor: "#FF6644",
+  accentColor: "#f15e2f",
   listColor: "#F0F0F6",
   totalRank: {
     backrgoundColor: "#35393F",

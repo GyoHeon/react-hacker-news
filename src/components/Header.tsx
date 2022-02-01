@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ toggle, mode }: any) {
   return (
     <Head>
       <Link to="/">
@@ -9,7 +9,9 @@ function Header() {
         <h1>ReHacker News</h1>
       </Link>
       <section>
-        <img src="image/themeChangeBtn.png" alt="Theme change buton" />
+        <button onClick={toggle}>
+          <img src="image/themeChangeBtn.png" alt="Theme change buton" />
+        </button>
         <img src="image/infoBtn.png" alt="Info button" />
       </section>
     </Head>
