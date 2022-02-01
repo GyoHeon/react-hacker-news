@@ -18,6 +18,9 @@ export const whiteTheme: DefaultTheme = {
     swiperNoActive: "#E5E5EC",
     background:
       "background: linear-gradient(158.71deg, #E8EBF2 2.84%, #F2F3F7 97.53%);",
+    border: "1px solid rgba(255, 255, 255, 0.5);",
+    mainShadow: "10px 10px 30px rgba(15, 41, 107, 0.12)",
+    sideShadow: " -10px -10px 20px #ffffff",
   },
   listTop: {
     text: "#999999",
@@ -54,6 +57,9 @@ export const darkTheme: DefaultTheme = {
     backrgoundColor: "#35393F",
     swiperNoActive: "#2D2D2E",
     background: "linear-gradient(158.53deg, #31353C 5.38%, #35393F 95.04%)",
+    border: "1px solid rgba(80, 88, 91, 0.15)",
+    mainShadow: "inset 10px 10px 30px rgba(19, 19, 20, 0.5)",
+    sideShadow: "inset -10px -10px 20px rgba(82, 87, 95, 0.5)",
   },
   listTop: {
     text: "#767676",

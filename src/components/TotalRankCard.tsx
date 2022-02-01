@@ -26,8 +26,8 @@ const Card = styled.div`
   margin: 0 88px 73px 87px;
   padding: 64px 20px 16px 20px;
   background: ${(props) => props.theme.totalRank.background};
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 10px 10px 30px rgba(15, 41, 107, 0.12);
+  border: ${(props) => props.theme.totalRank.border};
+  box-shadow: ${(props) => props.theme.totalRank.mainShadow};
   position: relative;
   h2 {
     font-size: 28px;
@@ -57,8 +57,9 @@ const Shadow = styled.div`
   height: 300px;
   border-radius: 24px;
   margin: 0 88px 73px 87px;
-  box-shadow: -10px -10px 20px #ffffff;
+  box-shadow: ${(props) => props.theme.totalRank.sideShadow};
   position: absolute;
+  z-index: 9;
 `;
 
 export default TotalRankCard;

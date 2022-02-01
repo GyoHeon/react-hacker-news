@@ -20,6 +20,9 @@ declare module "styled-components" {
       backrgoundColor: string;
       swiperNoActive: string;
       background: string;
+      border: string;
+      mainShadow: string;
+      sideShadow: string;
     };
     listItem: {
       backgroundColor: string;
