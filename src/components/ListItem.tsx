@@ -18,12 +18,12 @@ function ListItem({ by, score, title }: AData) {
           <img src="image/rightArrow.png" alt="right arrow" />
         </div>
         <div className="side">
-          <div>
-            <img src="image/point.png" alt="comment" />
+          <div className="point">
+            <img alt="point" />
             {score}
           </div>
-          <div>
-            <img src="image/comment.png" alt="comment" />
+          <div className="comment">
+            <img alt="comment" />
             1000
           </div>
         </div>
@@ -33,17 +33,18 @@ function ListItem({ by, score, title }: AData) {
 }
 
 const Li = styled.li`
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.listItem.backgroundColor};
   width: 335px;
   border-radius: 16px;
   padding: 16px 16px 12px;
   margin: 0 20px 12px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: ${(props) => props.theme.listItem.shadow};
   h1 {
+    color: ${(props) => props.theme.textColor};
     font-size: 18px;
     line-height: 24px;
     padding-bottom: 12px;
-    border-bottom: 1px solid ${(props) => props.theme.listColor};
+    border-bottom: 1px solid ${(props) => props.theme.listItem.line};
   }
   section {
     margin-top: 8px;
@@ -56,6 +57,7 @@ const Li = styled.li`
       align-items: center;
       font-size: 12px;
       line-height: 16px;
+      color: ${(props) => props.theme.listItem.textAuthor};
       img {
         width: 6px;
         margin-left: 6px;
@@ -74,6 +76,18 @@ const Li = styled.li`
         display: flex;
         align-items: center;
         margin-left: 8px;
+      }
+      .point {
+        color: ${(props) => props.theme.listItem.textComment};
+        img {
+          content: url(${(props) => props.theme.listItem.btnComment});
+        }
+      }
+      .comment {
+        color: ${(props) => props.theme.accentColor};
+        img {
+          content: url(${(props) => props.theme.listItem.btnPoint});
+        }
       }
     }
   }

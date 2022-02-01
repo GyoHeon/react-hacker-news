@@ -33,7 +33,7 @@ footer, header, hgroup, main, menu, nav, section {
   box-sizing: border-box;
 }
 button {
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.backgroundColor};
 }
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {

@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function Header({ toggle, mode }: any) {
+function Header({ toggle }: any) {
   return (
     <Head>
       <Link to="/">
-        <img src="image/logo.png" alt="Hacker news logo" />
+        <img alt="Hacker news logo" />
         <h1>ReHacker News</h1>
       </Link>
       <section>
         <button onClick={toggle}>
-          <img src="image/themeChangeBtn.png" alt="Theme change buton" />
+          <img alt="Theme change buton" />
         </button>
         <img src="image/infoBtn.png" alt="Info button" />
       </section>
@@ -28,9 +28,11 @@ const Head = styled.header`
     padding: 16px 0 12px 20px;
     display: flex;
     img {
+      display: block;
       width: 32px;
       height: 32px;
       margin-right: 8px;
+      content: url(${(props) => props.theme.header.logo});
     }
     h1 {
       font-size: 14px;
@@ -47,6 +49,15 @@ const Head = styled.header`
       width: 32px;
       height: 32px;
       margin-left: 8px;
+      &:first-child {
+        display: block;
+        width: 32px;
+        height: 32px;
+        content: url(${(props) => props.theme.header.themeBtn});
+      }
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;

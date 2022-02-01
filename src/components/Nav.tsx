@@ -44,7 +44,7 @@ const BottomLine = styled.div`
   width: 100%;
   height: 1px;
   margin-top: 7px;
-  background-color: ${(props) => props.theme.listColor};
+  background-color: ${(props) => props.theme.nav.line};
   &.isHome {
     background-color: ${(props) => props.theme.accentColor};
   }
