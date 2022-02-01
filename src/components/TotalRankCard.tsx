@@ -25,7 +25,7 @@ const Card = styled.div`
   border-radius: 24px;
   margin: 0 88px 73px 87px;
   padding: 64px 20px 16px 20px;
-  background: linear-gradient(158.71deg, #e8ebf2 2.84%, #f2f3f7 97.53%);
+  background: ${(props) => props.theme.totalRank.background};
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 10px 10px 30px rgba(15, 41, 107, 0.12);
   position: relative;

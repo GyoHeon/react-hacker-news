@@ -57,17 +57,17 @@ const Total = styled.section`
   section {
     height: 427px;
     padding-top: 54px;
-    background-color: #f2f3f7;
+    background-color: ${(props) => props.theme.totalRank.backrgoundColor};
   }
 `;
 const StyledSwiper = styled(Swiper)`
   height: 427px;
   padding-top: 54px;
-  background-color: #f2f3f7;
+  background-color: ${(props) => props.theme.totalRank.backrgoundColor};
   .swiper-pagination-bullet {
     width: 5px;
     height: 5px;
-    background: ${(props) => props.theme.swiperNoActive};
+    background: ${(props) => props.theme.totalRank.swiperNoActive};
     opacity: 1;
   }
   .swiper-pagination-bullet-active {

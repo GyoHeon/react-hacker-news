@@ -9,6 +9,10 @@ declare module "styled-components" {
     textCommentColor: string;
     accentColor: string;
     listColor: string;
-    swiperNoActive: string;
+    totalRank: {
+      backrgoundColor: string;
+      swiperNoActive: string;
+      background: string;
+    };
   }
 }
