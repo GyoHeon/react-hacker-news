@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-hacker-news/static/css/main.8696084c.css",
-    "main.js": "/react-hacker-news/static/js/main.c9fa81f9.js",
+    "main.js": "/react-hacker-news/static/js/main.d588815f.js",
     "index.html": "/react-hacker-news/index.html",
     "main.8696084c.css.map": "/react-hacker-news/static/css/main.8696084c.css.map",
-    "main.c9fa81f9.js.map": "/react-hacker-news/static/js/main.c9fa81f9.js.map"
+    "main.d588815f.js.map": "/react-hacker-news/static/js/main.d588815f.js.map"
   },
   "entrypoints": [
     "static/css/main.8696084c.css",
-    "static/js/main.c9fa81f9.js"
+    "static/js/main.d588815f.js"
   ]
 }
