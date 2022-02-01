@@ -8,26 +8,33 @@ import { fetchNums, fetchArticles } from "../api";
 function Article() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
+  const [articleNums, setArticleNums] = useState<number[]>([]);
+  const [sortedNew, setSortedNew] = useState(false);
 
   useEffect(() => {
     (async () => {
       const json: any = await fetchNums();
-
-      const objArr: any = await fetchArticles(json, 0, 10);
-
-      setArticleDatas(objArr);
-
-      console.log(objArr);
-      console.log("data:", articleDatas);
+      setArticleNums(json);
       setLoading(false);
     })();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const sortNums: number[] = [...articleNums];
+      if (sortedNew) {
+        sortNums.sort((a: number, b: number) => b - a);
+      }
+      const objArr: any = await fetchArticles(sortNums, 0, 10);
+      setArticleDatas(objArr);
+    })();
+  }, [loading, sortedNew]);
 
   return (
     <Viewport>
       <Header />
       <Nav />
-      <List datas={articleDatas}>
+      <List datas={articleDatas} sorted={sortedNew}>
         {/* {loading
           ? "wait"
           : articleDatas?.map((x) => <li key={x.id}>{x.title}</li>)} */}

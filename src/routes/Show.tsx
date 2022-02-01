@@ -18,7 +18,7 @@ function Show() {
       setArticleDatas(objArr);
 
       console.log(objArr);
-      console.log("data:", articleDatas);
+
       setLoading(false);
     })();
   }, []);
