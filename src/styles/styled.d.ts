@@ -17,6 +17,12 @@ declare module "styled-components" {
       text: string;
     };
     totalRank: {
+      width: number;
+      height: number;
+      paddingTop: number;
+      margin: string;
+      padding: string;
+      boxSizing: string;
       backrgoundColor: string;
       swiperNoActive: string;
       background: string;

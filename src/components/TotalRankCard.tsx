@@ -20,44 +20,45 @@ function TotalRankCard({ idx, title, by }: ADatas) {
 }
 
 const Card = styled.div`
-  width: 200px;
-  height: 300px;
-  border-radius: 24px;
-  margin: 0 88px 73px 87px;
-  padding: 64px 20px 16px 20px;
+  width: ${(props) => props.theme.totalRank.width}px;
+  height: ${(props) => props.theme.totalRank.height}px;
+  margin: ${(props) => props.theme.totalRank.margin};
+  padding: ${(props) => props.theme.totalRank.padding};
+  box-sizing: ${(props) => props.theme.totalRank.boxSizing}px;
   background: ${(props) => props.theme.totalRank.background};
   border: ${(props) => props.theme.totalRank.border};
   box-shadow: ${(props) => props.theme.totalRank.mainShadow};
+  border-radius: 24px;
   position: relative;
   h2 {
+    color: ${(props) => props.theme.accentColor};
     font-size: 28px;
     font-style: italic;
-    color: ${(props) => props.theme.accentColor};
   }
   p {
+    color: ${(props) => props.theme.textAuthorColor};
     width: 140px;
     font-size: 18px;
     font-weight: 500;
     margin-top: 12px;
     line-height: 24px;
-    color: ${(props) => props.theme.textAuthorColor};
   }
   span {
+    color: ${(props) => props.theme.textAuthorColor};
     display: inline-block;
     text-align: center;
     font-size: 12px;
     width: 160px;
     position: absolute;
     bottom: 16px;
-    color: ${(props) => props.theme.textAuthorColor};
   }
 `;
 const Shadow = styled.div`
-  width: 200px;
-  height: 300px;
-  border-radius: 24px;
-  margin: 0 88px 73px 87px;
+  width: ${(props) => props.theme.totalRank.width}px;
+  height: ${(props) => props.theme.totalRank.height}px;
+  margin: ${(props) => props.theme.totalRank.margin};
   box-shadow: ${(props) => props.theme.totalRank.sideShadow};
+  border-radius: 24px;
   position: absolute;
   z-index: 9;
 `;

@@ -54,15 +54,10 @@ const Total = styled.section`
     line-height: 40px;
     margin: 36px 20px 24px;
   }
-  section {
-    height: 427px;
-    padding-top: 54px;
-    background-color: ${(props) => props.theme.totalRank.backrgoundColor};
-  }
 `;
 const StyledSwiper = styled(Swiper)`
   height: 427px;
-  padding-top: 54px;
+  padding-top: ${(props) => props.theme.totalRank.paddingTop}px;
   background-color: ${(props) => props.theme.totalRank.backrgoundColor};
   .swiper-pagination-bullet {
     width: 5px;

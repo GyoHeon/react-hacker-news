@@ -14,6 +14,12 @@ export const whiteTheme: DefaultTheme = {
     line: "#F0F0F6",
   },
   totalRank: {
+    width: 200,
+    height: 300,
+    paddingTop: 54,
+    margin: "0 88px 73px 87px",
+    padding: "64px 20px 16px 20px",
+    boxSizing: "border-box",
     backrgoundColor: "#F2F3F7",
     swiperNoActive: "#E5E5EC",
     background:
@@ -54,6 +60,12 @@ export const darkTheme: DefaultTheme = {
     line: "#404040",
   },
   totalRank: {
+    width: 220,
+    height: 320,
+    paddingTop: 43,
+    margin: "0 77px 57px 76px",
+    padding: "75px 30px 24px 30px",
+    boxSizing: "content-box",
     backrgoundColor: "#35393F",
     swiperNoActive: "#2D2D2E",
     background: "linear-gradient(158.53deg, #31353C 5.38%, #35393F 95.04%)",
