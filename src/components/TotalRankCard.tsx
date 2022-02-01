@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-function TotalRankCard() {
+type ADatas = {
+  by: string;
+  title: string;
+};
+
+function TotalRankCard({ title, by }: ADatas) {
   return (
     <>
       <Shadow />
       <Card>
         <h2>01</h2>
-        <p>How much did a tunic const in the Roman Empire? (2021)</p>
-        <span>bryanrasmussen</span>
+        <p>{title}</p>
+        <span>{by}</span>
       </Card>
     </>
   );

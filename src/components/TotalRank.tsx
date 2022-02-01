@@ -6,7 +6,15 @@ import "swiper/scss/pagination";
 import styled from "styled-components";
 import TotalRankCard from "./TotalRankCard";
 
-function TotalRank() {
+type ADatas = {
+  by: string;
+  id: number;
+  score: number;
+  text: string;
+  title: string;
+};
+
+function TotalRank({ datas }: any) {
   SwiperCore.use([Navigation, Pagination]);
 
   return (
@@ -20,21 +28,11 @@ function TotalRank() {
           slidesPerView={1}
           pagination={{ clickable: true }}
         >
-          <SwiperSlide>
-            <TotalRankCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TotalRankCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TotalRankCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TotalRankCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TotalRankCard />
-          </SwiperSlide>
+          {datas.map((data: ADatas) => (
+            <SwiperSlide>
+              <TotalRankCard title={data.title} by={data.by} />
+            </SwiperSlide>
+          ))}
         </StyledSwiper>
       </div>
     </Total>

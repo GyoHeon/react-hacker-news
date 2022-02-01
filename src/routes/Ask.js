@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useQuery } from "react-query";
-import { fetchAsk } from "../api";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
@@ -12,7 +11,6 @@ const BASE_URL = `https://hacker-news.firebaseio.com/v0`;
 function Ask() {
   const [articleNums, setArticleNums] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [titles, setTitles] = useState([]);
   const [articleDatas, setArticleDatas] = useState([]);
 
   useEffect(async () => {

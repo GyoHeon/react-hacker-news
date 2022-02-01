@@ -15,8 +15,9 @@ function List({ datas }: any) {
     <>
       <ListTop />
       <Ul>
-        {datas.map((data: any) => (
+        {datas.map((data: ADatas) => (
           <ListItem
+            key={data.id}
             by={data.by}
             id={data.id}
             score={data.score}
