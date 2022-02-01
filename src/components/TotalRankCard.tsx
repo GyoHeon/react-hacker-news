@@ -56,9 +56,8 @@ const Shadow = styled.div`
   width: 200px;
   height: 300px;
   border-radius: 24px;
-  background-color: #ffffff;
-  margin: -10px 98px 83px 77px;
-  filter: blur(20px);
+  margin: 0 88px 73px 87px;
+  box-shadow: -10px -10px 20px #ffffff;
   position: absolute;
 `;
 

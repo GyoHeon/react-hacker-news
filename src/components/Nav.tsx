@@ -52,9 +52,9 @@ const BottomLine = styled.div`
 const Navbar = styled.nav`
   width: 335px;
   height: 40px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
   a {
-    color: ${(props) => props.theme.textMenuColor};
+    color: ${(props) => props.theme.textAuthorColor};
     text-align: center;
     font-size: 18px;
     line-height: 24px;
