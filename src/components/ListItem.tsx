@@ -34,10 +34,10 @@ function ListItem({ by, score, title }: AData) {
 
 const Li = styled.li`
   background-color: ${(props) => props.theme.backgroundColor};
-  width: 100%;
+  width: 335px;
   border-radius: 16px;
   padding: 16px 16px 12px;
-  margin-bottom: 12px;
+  margin: 0 20px 12px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   h1 {
     font-size: 18px;

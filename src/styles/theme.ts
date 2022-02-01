@@ -8,4 +8,5 @@ export const whiteTheme: DefaultTheme = {
   textCommentColor: "#505050",
   accentColor: "#FF6600",
   listColor: "#F0F0F6",
+  swiperNoActive: "#E5E5EC",
 };

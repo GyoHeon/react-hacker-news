@@ -1,15 +1,42 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
 import styled from "styled-components";
 import TotalRankCard from "./TotalRankCard";
 
 function TotalRank() {
+  SwiperCore.use([Navigation, Pagination]);
+
   return (
     <Total>
       <h1>
         Current <br /> Total Top 5
       </h1>
-      <section>
-        <TotalRankCard />
-      </section>
+      <div>
+        <StyledSwiper
+          className="TotalRank"
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+        >
+          <SwiperSlide>
+            <TotalRankCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TotalRankCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TotalRankCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TotalRankCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TotalRankCard />
+          </SwiperSlide>
+        </StyledSwiper>
+      </div>
     </Total>
   );
 }
@@ -33,6 +60,21 @@ const Total = styled.section`
     height: 427px;
     padding-top: 54px;
     background-color: #f2f3f7;
+  }
+`;
+const StyledSwiper = styled(Swiper)`
+  height: 427px;
+  padding-top: 54px;
+  background-color: #f2f3f7;
+  .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    background: ${(props) => props.theme.swiperNoActive};
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    border-radius: 5px;
+    background: ${(props) => props.theme.accentColor};
   }
 `;
 

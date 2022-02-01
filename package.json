@@ -12,16 +12,18 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.21",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.34.12",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "sass": "^1.49.4",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
+    "swiper": "^7.4.1",
     "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4",
-    "gh-pages": "^3.2.3"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

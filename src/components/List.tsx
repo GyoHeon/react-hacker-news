@@ -30,10 +30,9 @@ function List({ datas }: any) {
 }
 
 const Ul = styled.ul`
-  max-width: 335px;
+  max-width: 375px;
   width: 100%;
   height: 606px;
-  margin: 0 20px;
   overflow: scroll;
 `;
 
