@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 import TotalRank from "../components/TotalRank";
+import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 import { useTheme } from "../context/ThemeProvider";
@@ -33,6 +34,7 @@ function Home() {
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav isHome={true} />
       <TotalRank datas={articleDatas} />
+      <List datas={articleDatas}></List>
     </Viewport>
   );
 }

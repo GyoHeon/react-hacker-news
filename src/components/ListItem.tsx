@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ReactSlider from "react-slider";
+import { useState } from "react";
 
 type AData = {
   by: string;
@@ -10,6 +12,8 @@ type AData = {
 };
 
 function ListItem({ by, score, title, descendants }: AData) {
+  const [value, setValue] = useState(50);
+
   return (
     <Li>
       <h1>{title}</h1>

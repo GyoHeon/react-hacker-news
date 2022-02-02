@@ -50,7 +50,7 @@ const Card = styled.div`
     font-size: 12px;
     width: 160px;
     position: absolute;
-    bottom: 16px;
+    bottom: ${(props) => props.theme.totalRank.bottom}px;
   }
 `;
 const Shadow = styled.div`

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Pagination } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
@@ -15,7 +15,7 @@ type ADatas = {
 };
 
 function TotalRank({ datas }: any) {
-  SwiperCore.use([Navigation, Pagination]);
+  SwiperCore.use([Pagination]);
 
   return (
     <Total>
@@ -59,15 +59,19 @@ const StyledSwiper = styled(Swiper)`
   padding-top: ${(props) => props.theme.totalRank.paddingTop}px;
   background-color: ${(props) => props.theme.totalRank.backrgoundColor};
   height: 427px;
-  .swiper-pagination-bullet {
-    background: ${(props) => props.theme.totalRank.swiperNoActive};
-    width: 5px;
-    height: 5px;
-    opacity: 1;
-  }
-  .swiper-pagination-bullet-active {
-    background: ${(props) => props.theme.accentColor};
-    border-radius: 5px;
+  .swiper-pagination-horizontal {
+    bottom: 29px;
+    .swiper-pagination-bullet {
+      background-color: ${(props) => props.theme.totalRank.swiperNoActive};
+      margin: 0 2px;
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: ${(props) => props.theme.accentColor};
+      border-radius: 5px;
+    }
   }
 `;
 

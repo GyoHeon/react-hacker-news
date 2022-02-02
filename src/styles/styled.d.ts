@@ -20,6 +20,7 @@ declare module "styled-components" {
       width: number;
       height: number;
       paddingTop: number;
+      bottom: number;
       margin: string;
       padding: string;
       boxSizing: string;

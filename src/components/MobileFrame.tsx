@@ -9,7 +9,7 @@ const MobileFullFrame = styled.div`
   width: 100%;
   max-height: 768px;
   height: 100%;
-  margin: 100px auto 0;
+  margin: 20px auto 0;
 `;
 
 export default MobileFrame;
