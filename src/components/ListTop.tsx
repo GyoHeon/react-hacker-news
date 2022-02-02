@@ -24,7 +24,7 @@ const Top = styled.section`
   max-width: 335px;
   width: 100%;
   height: 20px;
-  margin: 20px;
+  margin: 20px 20px 12px;
   display: flex;
   justify-content: space-between;
   div {
