@@ -5,6 +5,7 @@ import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 import { useTheme } from "../context/ThemeProvider";
+import { useSort } from "../context/SortProvider";
 
 function Show() {
   const [loading, setLoading] = useState(true);
@@ -12,6 +13,7 @@ function Show() {
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [sortedNew, setSortedNew] = useState(false);
   const [ThemeMode, toggleTheme] = useTheme();
+  const [SortMode, newSort, topSort] = useSort();
 
   useEffect(() => {
     (async () => {
@@ -24,7 +26,7 @@ function Show() {
   useEffect(() => {
     (async () => {
       const sortNums: number[] = [...articleNums];
-      if (sortedNew) {
+      if (SortMode === "new") {
         sortNums.sort((a: number, b: number) => b - a);
       }
       const objArr: any = (await fetchArticles(sortNums, 0, 10)).map((data) => {
@@ -35,7 +37,7 @@ function Show() {
       });
       setArticleDatas(objArr);
     })();
-  }, [loading, sortedNew]);
+  }, [loading, SortMode]);
 
   return (
     <Viewport>

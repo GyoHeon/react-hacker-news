@@ -20,20 +20,19 @@ function Article() {
       const json: number[] = await fetchNums();
       setArticleNums(json);
       setLoading(false);
-      console.log("test");
     })();
-  }, [SortMode]);
+  }, []);
 
   useEffect(() => {
     (async () => {
       const sortNums: number[] = [...articleNums];
-      if (sortedNew) {
+      if (SortMode === "new") {
         sortNums.sort((a: number, b: number) => b - a);
       }
       const objArr: any = await fetchArticles(sortNums, 0, 10);
       setArticleDatas(objArr);
     })();
-  }, [loading, sortedNew]);
+  }, [loading, SortMode]);
 
   return (
     <Viewport>
