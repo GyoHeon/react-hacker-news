@@ -5,6 +5,7 @@ import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 import { useTheme } from "../context/ThemeProvider";
+import { useSort } from "../context/SortProvider";
 
 function Article() {
   const [loading, setLoading] = useState(true);
@@ -12,14 +13,16 @@ function Article() {
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [sortedNew, setSortedNew] = useState(false);
   const [ThemeMode, toggleTheme] = useTheme();
+  const [SortMode, newSort, topSort] = useSort();
 
   useEffect(() => {
     (async () => {
-      const json: any = await fetchNums();
+      const json: number[] = await fetchNums();
       setArticleNums(json);
       setLoading(false);
+      console.log("test");
     })();
-  }, []);
+  }, [SortMode]);
 
   useEffect(() => {
     (async () => {

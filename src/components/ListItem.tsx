@@ -93,7 +93,10 @@ function ListItem({
       <section className="under">
         <div className="rank">
           <h2>{newIndex}</h2>
-          <span>{timeD} ago</span>
+          <span>
+            {timeD}
+            <br /> ago
+          </span>
         </div>
         <div className="link">
           <img src={`./image/link.png`} alt="link" />
@@ -188,7 +191,6 @@ const Li = styled.li`
       top: 50%;
       transform: translate(0, -50%);
       position: absolute;
-      width: 57px;
       h2 {
         font-size: 20px;
         line-height: 22px;

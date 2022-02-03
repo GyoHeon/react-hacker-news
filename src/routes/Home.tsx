@@ -16,7 +16,7 @@ function Home() {
 
   useEffect(() => {
     (async () => {
-      const json: any = await fetchNums();
+      const json: number[] = await fetchNums();
 
       const objArr: any = await fetchArticles(json, 0, 5);
 

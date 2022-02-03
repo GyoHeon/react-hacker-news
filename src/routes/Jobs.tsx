@@ -13,7 +13,7 @@ function Jobs() {
 
   useEffect(() => {
     (async () => {
-      const json: any = await fetchNums("job");
+      const json: number[] = await fetchNums("job");
 
       const objArr: any = await fetchArticles(json, 0, 10);
 

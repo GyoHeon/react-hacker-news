@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 function ListTop({ mode, newSort, topSort }: any) {
-  console.log(mode);
   return (
     <Top>
       <div>

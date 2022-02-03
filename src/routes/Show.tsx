@@ -15,7 +15,7 @@ function Show() {
 
   useEffect(() => {
     (async () => {
-      const json: any = await fetchNums("show");
+      const json: number[] = await fetchNums("show");
       setArticleNums(json);
       setLoading(false);
     })();
