@@ -74,7 +74,7 @@ function ListItem({
           <section>
             <div className="author">
               <span>{by}</span>
-              <img src="image/rightArrow.png" alt="right arrow" />
+              <img src="image/rightArrow.svg" alt="right arrow" />
             </div>
             <div className="side">
               <div className="point">
@@ -128,11 +128,12 @@ const Box = styled.div<IBox>`
       color: ${(props) => props.theme.listItem.textAuthor};
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       font-size: 12px;
       line-height: 16px;
       img {
-        width: 6px;
-        margin-left: 6px;
+        width: 16px;
+        height: 16px;
       }
     }
     .side {
@@ -172,7 +173,7 @@ const Li = styled.li`
     ${(props) => props.theme.subAccentColor} 50%
   );
   width: 335px;
-  border-radius: 16px;
+  border-radius: 17px;
   margin: 0 20px 12px;
   position: relative;
   .under {

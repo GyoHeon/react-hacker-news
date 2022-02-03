@@ -5,11 +5,11 @@ function ListTop() {
     <Top>
       <div>
         <button>
-          <img src="image/check.svg" alt="check mark" />
+          <img src="image/checkArrow.svg" alt="check mark" />
           NEW
         </button>
         <button>
-          <img src="image/check.svg" alt="check mark" />
+          <img src="image/checkArrow.svg" alt="check mark" />
           TOP
         </button>
       </div>
@@ -24,7 +24,7 @@ const Top = styled.section`
   max-width: 335px;
   width: 100%;
   height: 20px;
-  margin: 20px 20px 12px;
+  margin: 20px 20px 20px;
   display: flex;
   justify-content: space-between;
   div {
@@ -36,9 +36,8 @@ const Top = styled.section`
       align-items: center;
       margin-right: 4px;
       img {
-        width: 23px;
-        height: 23px;
-        padding: 7px 6px 7px 6px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
