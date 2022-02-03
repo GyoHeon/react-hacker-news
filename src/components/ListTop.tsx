@@ -64,11 +64,8 @@ const Top = styled.section`
     }
     .selected {
       color: ${(props) => props.theme.accentColor};
-      svg {
-        fill: red;
-        fill-opacity: 1;
-        stroke: purple;
-        stroke-opacity: 1;
+      path {
+        stroke: ${(props) => props.theme.accentColor};
       }
     }
   }
