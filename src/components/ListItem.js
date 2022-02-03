@@ -11,9 +11,19 @@ type AData = {
   text: string,
   by: string,
   title: string,
+  url?: string,
 };
 
-function ListItem({ id, by, score, time, title, descendants, index }: AData) {
+function ListItem({
+  id,
+  by,
+  score,
+  time,
+  title,
+  descendants,
+  index,
+  url,
+}: AData) {
   const [timeD, setTimeD] = useState("");
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isControlled, setIsControlled] = useState(true);
@@ -38,8 +48,9 @@ function ListItem({ id, by, score, time, title, descendants, index }: AData) {
     setIsControlled(false);
   };
   const handleStop = () => {
+    const URL = url ? url : `https://news.ycombinator.com/item?id=${id}`;
     if (position.x === -100) {
-      console.log("link move");
+      window.open(URL, "_blank").focus();
     }
     setPosition({ x: 0, y: 0 });
   };

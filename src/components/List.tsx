@@ -10,6 +10,7 @@ type ADatas = {
   text: string;
   by: string;
   title: string;
+  url?: string;
 };
 
 function List({ datas }: any) {
@@ -28,6 +29,7 @@ function List({ datas }: any) {
             time={data.time}
             text={data.text}
             title={data.title}
+            url={data.url}
           ></ListItem>
         ))}{" "}
       </Ul>
