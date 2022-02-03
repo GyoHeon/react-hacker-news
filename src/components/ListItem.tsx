@@ -58,6 +58,7 @@ function ListItem({
       window.open(URL, "_blank")?.focus();
     }
     setPosition({ x: 0, y: 0 });
+    setIsControlled(true);
   };
 
   return (
@@ -105,7 +106,7 @@ function ListItem({
 const Box = styled.div<IBox>`
   background-color: ${(props) => props.theme.listItem.backgroundColor};
   box-shadow: ${(props) => props.theme.listItem.shadow};
-  transition: ${(props) => (props.isControlled ? `transform 10s` : `none`)};
+  transition: ${(props) => (props.isControlled ? `transform 0.3s` : `none`)};
   width: 335px;
   border-radius: 16px;
   padding: 16px 16px 12px;
@@ -187,7 +188,7 @@ const Li = styled.li`
       top: 50%;
       transform: translate(0, -50%);
       position: absolute;
-      width: 60px;
+      width: 57px;
       h2 {
         font-size: 20px;
         line-height: 22px;

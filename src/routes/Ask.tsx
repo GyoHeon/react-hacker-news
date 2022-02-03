@@ -41,7 +41,7 @@ function Ask() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
-      <List datas={articleDatas}></List>
+      <List datas={articleDatas} />
     </Viewport>
   );
 }

@@ -1,15 +1,40 @@
 import styled from "styled-components";
 
-function ListTop() {
+function ListTop({ mode, newSort, topSort }: any) {
+  console.log(mode);
   return (
     <Top>
       <div>
-        <button>
-          <img src="image/checkArrow.svg" alt="check mark" />
+        <button onClick={newSort} className={mode === "new" ? "selected" : ""}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 10.6L8.28571 13L14 7"
+              stroke="#999999"
+              stroke-linecap="round"
+            />
+          </svg>
           NEW
         </button>
-        <button>
-          <img src="image/checkArrow.svg" alt="check mark" />
+        <button onClick={topSort} className={mode === "top" ? "selected" : ""}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 10.6L8.28571 13L14 7"
+              stroke="#999999"
+              stroke-linecap="round"
+            />
+          </svg>
           TOP
         </button>
       </div>
@@ -35,13 +60,20 @@ const Top = styled.section`
       display: flex;
       align-items: center;
       margin-right: 4px;
-      img {
-        width: 20px;
-        height: 20px;
+      cursor: pointer;
+    }
+    .selected {
+      color: ${(props) => props.theme.accentColor};
+      svg {
+        fill: red;
+        fill-opacity: 1;
+        stroke: purple;
+        stroke-opacity: 1;
       }
     }
   }
   button {
+    cursor: pointer;
     img {
       height: 20px;
       width: 20px;

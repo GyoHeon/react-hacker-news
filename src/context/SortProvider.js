@@ -1,16 +1,14 @@
 import { createContext, useState, useContext, useCallback } from "react";
-import { ThemeProvider as StyledProvider } from "styled-components";
 
 const SortContext = createContext({});
 
 const SortProviderToggle = ({ children }) => {
-  const [SortMode, setSortMode] = useState("white");
-  const sortObject = SortMode === "white" ? whiteTheme : darkTheme;
+  const [SortMode, setSortMode] = useState("top");
 
   return (
-    <ThemeContext.Provider value={{ SortMode, setSortMode }}>
+    <SortContext.Provider value={{ SortMode, setSortMode }}>
       {children}
-    </ThemeContext.Provider>
+    </SortContext.Provider>
   );
 };
 
@@ -18,15 +16,14 @@ function useSort() {
   const context = useContext(SortContext);
   const { SortMode, setSortMode } = context;
 
-  const toggleSort = useCallback(() => {
-    if (SortMode === "white") {
-      setSortMode("dark");
-    } else {
-      setSortMode("white");
-    }
+  const newSort = useCallback(() => {
+    if (SortMode === "top") setSortMode("new");
+  }, [SortMode]);
+  const topSort = useCallback(() => {
+    if (SortMode === "new") setSortMode("top");
   }, [SortMode]);
 
-  return [SortMode, toggleSort];
+  return [SortMode, newSort, topSort];
 }
 
 export { SortProviderToggle, useSort };

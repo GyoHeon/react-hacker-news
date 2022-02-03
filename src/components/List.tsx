@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ListTop from "./ListTop";
 import ListItem from "./ListItem";
+import { useSort } from "../context/SortProvider";
 
 type ADatas = {
   descendants: number;
@@ -14,9 +15,11 @@ type ADatas = {
 };
 
 function List({ datas }: any) {
+  const [SortMode, newSort, topSort] = useSort();
+
   return (
     <>
-      <ListTop />
+      <ListTop newSort={newSort} topSort={topSort} mode={SortMode} />
       <Ul>
         {datas.map((data: ADatas, index: number) => (
           <ListItem
