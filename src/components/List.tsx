@@ -3,11 +3,12 @@ import ListTop from "./ListTop";
 import ListItem from "./ListItem";
 
 type ADatas = {
-  by: string;
   descendants: number;
   id: number;
   score: number;
+  time: number;
   text: string;
+  by: string;
   title: string;
 };
 
@@ -16,13 +17,15 @@ function List({ datas }: any) {
     <>
       <ListTop />
       <Ul>
-        {datas.map((data: ADatas) => (
+        {datas.map((data: ADatas, index: number) => (
           <ListItem
             key={data.id}
+            index={index}
             descendants={data.descendants}
             by={data.by}
             id={data.id}
             score={data.score}
+            time={data.time}
             text={data.text}
             title={data.title}
           ></ListItem>

@@ -1,54 +1,100 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Draggable from "react-draggable";
 
 type AData = {
-  by: string,
   descendants: number,
   id: number,
   score: number,
+  time: number,
+  index: number,
   text: string,
+  by: string,
   title: string,
 };
 
-function ListItem({ by, score, title, descendants }: AData) {
-  const [value, setValue] = useState(50);
+function ListItem({ id, by, score, time, title, descendants, index }: AData) {
+  const [timeD, setTimeD] = useState("");
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isControlled, setIsControlled] = useState(true);
+
+  useEffect(() => {
+    let newTime = Math.floor((Date.now() / 1000 - time) / 60);
+    if (newTime < 60) setTimeD(`${newTime} minutes`);
+    else if (newTime < 60 * 24) {
+      newTime = Math.floor(newTime / 60);
+      setTimeD(`${newTime} hours`);
+    } else {
+      newTime = Math.floor(newTime / 60 / 24);
+      setTimeD(`${newTime} days`);
+    }
+  }, []);
+
+  const newIndex = ("00" + (index + 1).toString()).slice(-3);
+  const handleDrag = (e, data) => {
+    setPosition({ x: data.x, y: data.y });
+  };
+  const handleStart = () => {
+    setIsControlled(false);
+  };
+  const handleStop = () => {
+    if (position.x === -100) {
+      console.log("link move");
+    }
+    setPosition({ x: 0, y: 0 });
+  };
 
   return (
     <Li>
-      <Container>
-        <h1>{title}</h1>
-        <section>
-          <div className="author">
-            <span>{by}</span>
-            <img src="image/rightArrow.png" alt="right arrow" />
-          </div>
-          <div className="side">
-            <div className="point">
-              <img alt="point" />
-              {score}
+      <Draggable
+        position={position}
+        bounds={{ left: -100, right: 100, top: 0, bottom: 0 }}
+        onStart={handleStart}
+        onDrag={handleDrag}
+        onStop={handleStop}
+      >
+        <Box isControlled={isControlled}>
+          <h1>{title}</h1>
+          <section>
+            <div className="author">
+              <span>{by}</span>
+              <img src="image/rightArrow.png" alt="right arrow" />
             </div>
-            <div className="comment">
-              <img alt="comment" />
-              {descendants}
+            <div className="side">
+              <div className="point">
+                <img alt="point" />
+                {score}
+              </div>
+              <div className="comment">
+                <img alt="comment" />
+                {descendants}
+              </div>
             </div>
-          </div>
-        </section>
-      </Container>
+          </section>
+        </Box>
+      </Draggable>
+      <section className="under">
+        <div className="rank">
+          <h2>{newIndex}</h2>
+          <span>{timeD} ago</span>
+        </div>
+        <div className="link">
+          <img src={`./image/link.png`} alt="link" />
+        </div>
+      </section>
     </Li>
   );
 }
 
-const Container = styled.div`
-  border: 5px solid red;
-  width: 335px;
-`;
-const Li = styled.li`
+const Box = styled.div`
   background-color: ${(props) => props.theme.listItem.backgroundColor};
   box-shadow: ${(props) => props.theme.listItem.shadow};
+  transition: ${(props) => (props.isControlled ? `transform 10s` : `none`)};
   width: 335px;
   border-radius: 16px;
   padding: 16px 16px 12px;
-  margin: 0 20px 12px;
+  position: relative;
+  z-index: 5;
   h1 {
     color: ${(props) => props.theme.textColor};
     border-bottom: 1px solid ${(props) => props.theme.listItem.line};
@@ -98,6 +144,51 @@ const Li = styled.li`
         img {
           content: url(${(props) => props.theme.listItem.btnPoint});
         }
+      }
+    }
+  }
+`;
+
+const Li = styled.li`
+  background: linear-gradient(
+    90deg,
+    ${(props) => props.theme.accentColor} 50%,
+    ${(props) => props.theme.subAccentColor} 50%
+  );
+  width: 335px;
+  border-radius: 16px;
+  margin: 0 20px 12px;
+  position: relative;
+  .under {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .rank {
+      color: #ffffff;
+      left: 24px;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute;
+      width: 60px;
+      h2 {
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 4px;
+      }
+      span {
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
+    .link {
+      right: 16px;
+      top: 50%;
+      position: absolute;
+      transform: translate(0, -50%);
+      img {
+        width: 48px;
+        height: 48px;
       }
     }
   }

@@ -4,6 +4,8 @@ declare module "styled-components" {
   export interface DefaultTheme {
     backgroundColor: string;
     textColor: string;
+    accentColor: string;
+    subAccentColor: string;
     header: {
       logo: string;
       themeBtn: string;
@@ -43,7 +45,6 @@ declare module "styled-components" {
     textMenuColor: string;
     textAuthorColor: string;
     textCommentColor: string;
-    accentColor: string;
     listColor: string;
   }
 }

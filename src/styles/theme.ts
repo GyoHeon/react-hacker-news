@@ -4,6 +4,7 @@ export const whiteTheme: DefaultTheme = {
   backgroundColor: "#ffffff",
   textColor: "#111111",
   accentColor: "#FF6600",
+  subAccentColor: "#AFD8D8",
   header: {
     logo: "image/DarkLogo.png",
     themeBtn: "image/toDarkTheme.png",
@@ -51,6 +52,7 @@ export const darkTheme: DefaultTheme = {
   backgroundColor: "#222325",
   textColor: "#ffffff",
   accentColor: "#f15e2f",
+  subAccentColor: "#7FBABA",
   header: {
     logo: "image/WhiteLogo.png",
     themeBtn: "image/toWhiteTheme.png",
