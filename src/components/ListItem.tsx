@@ -3,16 +3,19 @@ import { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
 type AData = {
-  descendants: number,
-  id: number,
-  score: number,
-  time: number,
-  index: number,
-  text: string,
-  by: string,
-  title: string,
-  url?: string,
+  descendants: number;
+  id: number;
+  score: number;
+  time: number;
+  index: number;
+  text: string;
+  by: string;
+  title: string;
+  url?: string;
 };
+interface IBox {
+  isControlled: boolean;
+}
 
 function ListItem({
   id,
@@ -24,9 +27,9 @@ function ListItem({
   index,
   url,
 }: AData) {
-  const [timeD, setTimeD] = useState("");
+  const [timeD, setTimeD] = useState<string>("");
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isControlled, setIsControlled] = useState(true);
+  const [isControlled, setIsControlled] = useState<boolean>(true);
 
   useEffect(() => {
     let newTime = Math.floor((Date.now() / 1000 - time) / 60);
@@ -41,16 +44,18 @@ function ListItem({
   }, []);
 
   const newIndex = ("00" + (index + 1).toString()).slice(-3);
-  const handleDrag = (e, data) => {
+  const handleDrag = (e: any, data: any) => {
     setPosition({ x: data.x, y: data.y });
   };
   const handleStart = () => {
     setIsControlled(false);
   };
   const handleStop = () => {
-    const URL = url ? url : `https://news.ycombinator.com/item?id=${id}`;
+    const URL: string = url
+      ? url
+      : `https://news.ycombinator.com/item?id=${id}`;
     if (position.x === -100) {
-      window.open(URL, "_blank").focus();
+      window.open(URL, "_blank")?.focus();
     }
     setPosition({ x: 0, y: 0 });
   };
@@ -97,7 +102,7 @@ function ListItem({
   );
 }
 
-const Box = styled.div`
+const Box = styled.div<IBox>`
   background-color: ${(props) => props.theme.listItem.backgroundColor};
   box-shadow: ${(props) => props.theme.listItem.shadow};
   transition: ${(props) => (props.isControlled ? `transform 10s` : `none`)};
