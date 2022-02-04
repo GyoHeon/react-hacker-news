@@ -11,7 +11,6 @@ function Article() {
   const [loading, setLoading] = useState(true);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
   const [articleNums, setArticleNums] = useState<number[]>([]);
-  const [sortedNew, setSortedNew] = useState(false);
   const [ThemeMode, toggleTheme] = useTheme();
   const [SortMode, newSort, topSort] = useSort();
 
@@ -38,7 +37,7 @@ function Article() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
-      <List datas={articleDatas} sorted={sortedNew}></List>
+      <List datas={articleDatas}></List>
     </Viewport>
   );
 }
