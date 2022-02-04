@@ -12,6 +12,7 @@ import { useSort } from "../context/SortProvider";
 function Home() {
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
+  const [totalRankDatas, setTotalRankDatas] = useState<object[]>([]);
   const [articleDatas, setArticleDatas] = useState<object[]>([]);
   const [ThemeMode, toggleTheme] = useTheme();
   const [SortMode, newSort, topSort] = useSort();
@@ -23,6 +24,15 @@ function Home() {
       setLoading(false);
     })();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const sortNums: number[] = [...articleNums];
+
+      const objArr: any = await fetchArticles(sortNums, 0, 5);
+      setTotalRankDatas(objArr);
+    })();
+  }, [loading]);
 
   useEffect(() => {
     (async () => {
@@ -39,7 +49,7 @@ function Home() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav isHome={true} />
-      <TotalRank datas={articleDatas} />
+      <TotalRank datas={totalRankDatas} />
       <List datas={articleDatas}></List>
     </Viewport>
   );

@@ -11,9 +11,9 @@ TS function parameter 나중에 다 수정할 것
 
 # 구현 순서
 
-1. new, top
-2. bottom mordal
-3. comment page
-4. header slide
+1. ~~new, top~~
+2. bottom modal
+3. header slider
+4. comment page
 5. react query
 6. infinite scroll
