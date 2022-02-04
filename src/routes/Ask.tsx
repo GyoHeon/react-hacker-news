@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 import { useTheme } from "../context/ThemeProvider";
 import { useSort } from "../context/SortProvider";
+import InfoModal from "../components/InfoModal";
 
 function Ask() {
   const [loading, setLoading] = useState(true);

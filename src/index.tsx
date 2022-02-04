@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { ThemeProviderToggle } from "./context/ThemeProvider";
 import { SortProviderToggle } from "./context/SortProvider";
+// import { ModalsProvider } from "./context/ModalsProvider";
 
 ReactDOM.render(
   <React.StrictMode>
