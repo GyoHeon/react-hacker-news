@@ -18,3 +18,9 @@ TS function parameter 나중에 다 수정할 것
 5. comment page
 6. react query
 7. infinite scroll
+
+# refactor
+
+1. use outlet
+2. use react query
+3. data 1개의 오브젝트로 받아서 뿌려주기

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Draggable from "react-draggable";
 
 type AData = {
@@ -71,7 +72,9 @@ function ListItem({
         onStop={handleStop}
       >
         <Box isControlled={isControlled}>
-          <h1>{title}</h1>
+          <Link to={`${id}`}>
+            <h1>{title}</h1>
+          </Link>
           <section>
             <div className="author">
               <span>{by}</span>
