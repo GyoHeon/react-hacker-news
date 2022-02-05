@@ -95,6 +95,7 @@ function Desc() {
           </a>
         </div>
       </DescHeader>
+      <Text>{data?.text}</Text>
     </Viewport>
   );
 }
@@ -138,6 +139,11 @@ const DescHeader = styled.div`
       }
     }
   }
+`;
+const Text = styled.p`
+  font-size: 16px;
+  line-height: 24px;
+  margin: 44px 36px 48px;
 `;
 
 export default Desc;
