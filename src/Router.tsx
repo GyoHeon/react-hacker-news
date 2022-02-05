@@ -20,7 +20,7 @@ function Router<RouteObject>() {
           <Route path="/" element={<Home />} />
           <Route path="/Article/*" element={<Article />} />
           <Route path="/Show/*" element={<Show />} />
-          <Route path="/Ask" element={<Ask />} />
+          <Route path="/Ask/*" element={<Ask />} />
           <Route path="/Jobs/*" element={<Jobs />} />
         </Routes>
       </MobileFrame>
