@@ -39,7 +39,7 @@ function Desc() {
       <DescHeader>
         <h2>{newTime(data?.time)} ago</h2>
         <h1>{data?.title}</h1>
-        <div>
+        <section>
           <div>
             <span>{data?.score} points</span>
             <svg
@@ -85,9 +85,9 @@ function Desc() {
               />
             </svg>
           </a>
-        </div>
+        </section>
       </DescHeader>
-      {data?.text === undefined ? <Div /> : <Text>{data?.text}</Text>}
+      {data?.text === undefined ? <NoneDiv /> : <Text>{data?.text}</Text>}
     </Viewport>
   );
 }
@@ -104,18 +104,21 @@ const DescHeader = styled.div`
   h1 {
     font-size: 20px;
     line-height: 28px;
-    margin-bottom: 16px;
   }
-  div {
+  section {
     color: ${(props) => props.theme.listTop.text};
     font-size: 12px;
     line-height: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 0 16px;
+    border-bottom: 1px solid ${(props) => props.theme.nav.line};
     div {
       color: ${(props) => props.theme.listItem.textAuthor};
+      height: 16px;
       display: flex;
+      align-items: center;
       span:first-child {
         margin-right: 4px;
       }
@@ -124,6 +127,7 @@ const DescHeader = styled.div`
       }
     }
     a {
+      height: 16px;
       display: flex;
       align-items: center;
       svg {
@@ -135,10 +139,12 @@ const DescHeader = styled.div`
 const Text = styled.p`
   font-size: 16px;
   line-height: 24px;
-  margin: 44px 36px 48px;
+  margin: 28px 36px 40px;
+  border-radius: 0 0 24px 24px;
 `;
-const Div = styled.div`
-  margin-top: 88px;
+const NoneDiv = styled.div`
+  height: 40px;
+  border-radius: 0 0 24px 24px;
 `;
 
 export default Desc;
