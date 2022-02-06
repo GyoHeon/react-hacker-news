@@ -45,9 +45,6 @@ function Ask() {
     <Viewport>
       <Header toggle={toggleTheme} mode={ThemeMode} />
       <Nav />
-      <Routes>
-        <Route path=":id" element={<Desc />} />
-      </Routes>
       <List datas={articleDatas} />
     </Viewport>
   );

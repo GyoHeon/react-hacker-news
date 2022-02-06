@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Header from "../components/Header";
-import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -25,20 +23,15 @@ function Desc() {
     (async () => {
       const objArr: any = await fetchArticles([id], 0, 1);
       setData(objArr[0]);
-      console.log(data);
+      console.log(data?.text);
     })();
   }, []);
 
   const newTime = (time: number) => {
     let newTime = Math.floor((Date.now() / 1000 - time) / 60);
     if (newTime < 60) return `${newTime} minutes`;
-    else if (newTime < 60 * 24) {
-      newTime = Math.floor(newTime / 60);
-      return `${newTime} hours`;
-    } else {
-      newTime = Math.floor(newTime / 60 / 24);
-      return `${newTime} days`;
-    }
+    else if (newTime < 60 * 24) return `${Math.floor(newTime / 60)} hours`;
+    else return `${Math.floor(newTime / 60 / 24)} days`;
   };
 
   return (
@@ -58,7 +51,6 @@ function Desc() {
             >
               <circle cx="1" cy="1" r="1" fill="#E5E5EC" />
             </svg>
-
             <span>{data?.by}</span>
             <svg
               width="16"
@@ -95,7 +87,7 @@ function Desc() {
           </a>
         </div>
       </DescHeader>
-      <Text>{data?.text}</Text>
+      {data?.text === undefined ? <Div /> : <Text>{data?.text}</Text>}
     </Viewport>
   );
 }
@@ -144,6 +136,9 @@ const Text = styled.p`
   font-size: 16px;
   line-height: 24px;
   margin: 44px 36px 48px;
+`;
+const Div = styled.div`
+  margin-top: 88px;
 `;
 
 export default Desc;
