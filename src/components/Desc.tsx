@@ -19,6 +19,18 @@ function Desc() {
   const { id }: any = useParams();
   const [data, setData] = useState<any>();
 
+  const decodeHtml = (html: string) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+  const newTime = (time: number) => {
+    let newTime = Math.floor((Date.now() / 1000 - time) / 60);
+    if (newTime < 60) return `${newTime} minutes`;
+    else if (newTime < 60 * 24) return `${Math.floor(newTime / 60)} hours`;
+    else return `${Math.floor(newTime / 60 / 24)} days`;
+  };
+
   useEffect(() => {
     (async () => {
       const objArr: any = await fetchArticles([id], 0, 1);
@@ -26,13 +38,6 @@ function Desc() {
       console.log(data?.text);
     })();
   }, []);
-
-  const newTime = (time: number) => {
-    let newTime = Math.floor((Date.now() / 1000 - time) / 60);
-    if (newTime < 60) return `${newTime} minutes`;
-    else if (newTime < 60 * 24) return `${Math.floor(newTime / 60)} hours`;
-    else return `${Math.floor(newTime / 60 / 24)} days`;
-  };
 
   return (
     <Viewport>
@@ -87,7 +92,11 @@ function Desc() {
           </a>
         </section>
       </DescHeader>
-      {data?.text === undefined ? <NoneDiv /> : <Text>{data?.text}</Text>}
+      {data?.text === undefined ? (
+        <NoneDiv />
+      ) : (
+        <Text>{decodeHtml(data?.text)}</Text>
+      )}
     </Viewport>
   );
 }
