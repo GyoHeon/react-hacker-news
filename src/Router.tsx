@@ -20,13 +20,18 @@ function Router<RouteObject>() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Article" element={<Article />} />
-          <Route path="/Article/:id" element={<Description />} />
           <Route path="/Show" element={<Show />} />
-          <Route path="/Show/:id" element={<Description />} />
-          <Route path="/Ask/*" element={<Ask />} />
-          <Route path="/Ask/:id" element={<Description />} />
-          <Route path="/Jobs/*" element={<Jobs />} />
-          <Route path="/Jobs/:id" element={<Description />} />
+          <Route path="/Ask" element={<Ask />} />
+          <Route path="/Jobs" element={<Jobs />} />
+          <Route path="/:menu/:id" element={<Description />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
       </MobileFrame>
     </BrowserRouter>
