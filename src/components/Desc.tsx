@@ -20,10 +20,12 @@ function Desc() {
   const [data, setData] = useState<any>();
 
   const decodeHtml = (html: string) => {
+    html = html.replace(/<p>/g, ".&#13;&#10;");
     const txt = document.createElement("textarea");
     txt.innerHTML = html;
     return txt.value;
   };
+
   const newTime = (time: number) => {
     let newTime = Math.floor((Date.now() / 1000 - time) / 60);
     if (newTime < 60) return `${newTime} minutes`;
