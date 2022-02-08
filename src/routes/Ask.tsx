@@ -9,10 +9,21 @@ import { useSort } from "../context/SortProvider";
 import InfoModal from "../components/InfoModal";
 import Desc from "../components/Desc";
 
+interface ADatas {
+  descendants: number;
+  id: number;
+  score: number;
+  time: number;
+  text: string;
+  by: string;
+  title: string;
+  url?: string;
+}
+
 function Ask() {
   const [loading, setLoading] = useState(true);
-  const [articleDatas, setArticleDatas] = useState<object[]>([]);
   const [articleNums, setArticleNums] = useState<number[]>([]);
+  const [articleDatas, setArticleDatas] = useState<ADatas[]>([]);
   const [ThemeMode, toggleTheme] = useTheme();
   const [SortMode, newSort, topSort] = useSort();
 

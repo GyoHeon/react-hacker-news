@@ -4,21 +4,19 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticles } from "../api";
 
-type AData = {
+interface AData {
   descendants: number;
   id: number;
+  kids: number[];
   score: number;
   time: number;
   text?: string;
   by: string;
   title: string;
   url?: string;
-};
+}
 
-function Desc() {
-  const { id }: any = useParams();
-  const [data, setData] = useState<any>();
-
+function Desc({ props }: any) {
   const decodeHtml = (html: string) => {
     html = html.replace(/<p>/g, "&#13;&#10;");
     const txt = document.createElement("textarea");
@@ -33,21 +31,14 @@ function Desc() {
     else return `${Math.floor(newTime / 60 / 24)} days`;
   };
 
-  useEffect(() => {
-    (async () => {
-      const objArr: any = await fetchArticles([id], 0, 1);
-      setData(objArr[0]);
-    })();
-  }, []);
-
   return (
     <>
       <DescHeader>
-        <h2>{newTime(data?.time)} ago</h2>
-        <h1>{data?.title}</h1>
+        <h2>{newTime(props?.time)} ago</h2>
+        <h1>{props?.title}</h1>
         <section>
           <div>
-            <span>{data?.score} points</span>
+            <span>{props?.score} points</span>
             <svg
               width="2"
               height="2"
@@ -57,7 +48,7 @@ function Desc() {
             >
               <circle cx="1" cy="1" r="1" fill="#E5E5EC" />
             </svg>
-            <span>{data?.by}</span>
+            <span>{props?.by}</span>
             <svg
               width="16"
               height="16"
@@ -74,7 +65,7 @@ function Desc() {
             </svg>
           </div>
           <a
-            href={`https://news.ycombinator.com/item?id=${data?.id}`}
+            href={`https://news.ycombinator.com/item?id=${props?.id}`}
             target="_blank"
           >
             news.ycombinator.com
@@ -93,10 +84,10 @@ function Desc() {
           </a>
         </section>
       </DescHeader>
-      {data?.text === undefined ? (
+      {props?.text === undefined ? (
         <NoneDiv />
       ) : (
-        <Text>{decodeHtml(data?.text)}</Text>
+        <Text>{decodeHtml(props?.text)}</Text>
       )}
     </>
   );

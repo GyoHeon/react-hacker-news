@@ -3,7 +3,7 @@ import ListTop from "./ListTop";
 import ListItem from "./ListItem";
 import { useSort } from "../context/SortProvider";
 
-type ADatas = {
+interface ADatas {
   descendants: number;
   id: number;
   score: number;
@@ -12,7 +12,7 @@ type ADatas = {
   by: string;
   title: string;
   url?: string;
-};
+}
 
 function List({ datas }: any) {
   const [SortMode, newSort, topSort] = useSort();

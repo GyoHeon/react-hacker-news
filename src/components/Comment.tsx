@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
-function Comment() {
+function Comment({ props }: any) {
   return (
     <>
-      <CommentHead>
-        <div></div>
-      </CommentHead>
-      <List></List>
+      <CommentHead></CommentHead>
+      <List>
+        {props?.kids.map((prop: number, index: number) => (
+          <ListItem key={index}>{prop}</ListItem>
+        ))}
+      </List>
     </>
   );
 }
@@ -22,5 +24,6 @@ const List = styled.ul`
   margin: 0 20px 0;
   border-top: 1px solid ${(props) => props.theme.nav.line}; ;
 `;
+const ListItem = styled.li``;
 
 export default Comment;
