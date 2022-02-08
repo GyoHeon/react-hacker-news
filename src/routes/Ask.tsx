@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 import List from "../components/List";
-import { Route, Routes, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
 import { useTheme } from "../context/ThemeProvider";

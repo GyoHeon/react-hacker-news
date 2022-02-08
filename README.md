@@ -21,6 +21,6 @@ TS function parameter 나중에 다 수정할 것
 
 # refactor
 
-1. use outlet
+1. typescript any delete
 2. use react query
 3. data 1개의 오브젝트로 받아서 뿌려주기

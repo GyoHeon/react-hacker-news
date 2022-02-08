@@ -18,9 +18,6 @@ function Jobs() {
       const objArr: any = await fetchArticles(json, 0, 10);
 
       setArticleDatas(objArr);
-
-      console.log(objArr);
-      console.log("data:", articleDatas);
       setLoading(false);
     })();
   }, []);

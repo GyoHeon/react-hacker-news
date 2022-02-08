@@ -20,7 +20,7 @@ function Desc() {
   const [data, setData] = useState<any>();
 
   const decodeHtml = (html: string) => {
-    html = html.replace(/<p>/g, ".&#13;&#10;");
+    html = html.replace(/<p>/g, "&#13;&#10;");
     const txt = document.createElement("textarea");
     txt.innerHTML = html;
     return txt.value;
@@ -37,12 +37,11 @@ function Desc() {
     (async () => {
       const objArr: any = await fetchArticles([id], 0, 1);
       setData(objArr[0]);
-      console.log(data?.text);
     })();
   }, []);
 
   return (
-    <Viewport>
+    <>
       <DescHeader>
         <h2>{newTime(data?.time)} ago</h2>
         <h1>{data?.title}</h1>
@@ -99,12 +98,13 @@ function Desc() {
       ) : (
         <Text>{decodeHtml(data?.text)}</Text>
       )}
-    </Viewport>
+    </>
   );
 }
 
 const DescHeader = styled.div`
-  margin: 24px 20px 0;
+  background-color: ${(props) => props.theme.backgroundColor};
+  padding: 24px 20px 0;
   h2 {
     color: ${(props) => props.theme.accentColor};
     font-size: 12px;
@@ -150,12 +150,14 @@ const DescHeader = styled.div`
 const Text = styled.p`
   font-size: 16px;
   line-height: 24px;
-  margin: 28px 36px 40px;
+  padding: 28px 36px 40px;
   border-radius: 0 0 24px 24px;
+  box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.08);
 `;
 const NoneDiv = styled.div`
   height: 40px;
   border-radius: 0 0 24px 24px;
+  box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.08);
 `;
 
 export default Desc;
