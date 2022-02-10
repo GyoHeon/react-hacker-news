@@ -40,19 +40,14 @@ function Nav({ isHome = false }: INav) {
   );
 }
 
-const BottomLine = styled.div`
-  background-color: ${(props) => props.theme.nav.line};
-  width: 100%;
-  height: 1px;
-  margin-top: 7px;
-  &.isHome {
-    background-color: ${(props) => props.theme.accentColor};
-  }
-`;
 const Navbar = styled.nav`
-  width: 335px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  width: 375px;
   height: 40px;
-  margin: 0 auto;
+  padding: 0 20px;
   a {
     color: ${(props) => props.theme.textAuthorColor};
     text-align: center;
@@ -72,6 +67,15 @@ const Navbar = styled.nav`
       border-radius: 2px 2px 0 0;
       margin-top: 6px;
     }
+  }
+`;
+const BottomLine = styled.div`
+  background-color: ${(props) => props.theme.nav.line};
+  width: 100%;
+  height: 1px;
+  margin-top: 7px;
+  &.isHome {
+    background-color: ${(props) => props.theme.accentColor};
   }
 `;
 

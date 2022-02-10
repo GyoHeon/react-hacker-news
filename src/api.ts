@@ -1,9 +1,16 @@
 const BASE_URL = `https://hacker-news.firebaseio.com/v0`;
 
-interface obj {
-  nums: number[];
-  start: number;
-  end: number;
+interface Ijson {
+  title: string;
+  by: string;
+  text?: string;
+  url: string;
+  score: number;
+  id: number;
+  time: number;
+  descendants: number;
+  parent?: number;
+  kids?: number[];
 }
 
 export async function fetchNums(field: string = `top`) {
@@ -18,7 +25,7 @@ export async function fetchArticles(
   start: number,
   end: number
 ) {
-  const objArr = await Promise.all(
+  const objArr: Ijson[] = await Promise.all(
     nums.slice(start, end).map((articleNum) => {
       const value = fetch(`${BASE_URL}/item/${articleNum}.json`).then(
         (response) => response.json()

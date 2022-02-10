@@ -24,12 +24,19 @@ const Dim = styled.div`
   position: fixed;
   height: 771px;
   width: 375px;
-  top: 0;
-  right: 0;
   bottom: 0;
-  left: 0;
+  left: -20px;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.5);
+  animation: modal-dim 0.5s;
+  @keyframes modal-dim {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 const Modal = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -37,7 +44,7 @@ const Modal = styled.div`
   height: 600px;
   width: 375px;
   bottom: 0;
-  left: 0;
+  left: -20px;
   z-index: 9;
   padding: 0 20px;
   display: ${(props) => (props.opened ? "flex" : "none")};

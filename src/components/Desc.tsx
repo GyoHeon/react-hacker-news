@@ -17,13 +17,6 @@ interface AData {
 }
 
 function Desc({ props }: any) {
-  const decodeHtml = (html: string) => {
-    html = html.replace(/<p>/g, "&#13;&#10;");
-    const txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
-  };
-
   const newTime = (time: number) => {
     let newTime = Math.floor((Date.now() / 1000 - time) / 60);
     if (newTime < 60) return `${newTime} minutes`;
@@ -87,7 +80,7 @@ function Desc({ props }: any) {
       {props?.text === undefined ? (
         <NoneDiv />
       ) : (
-        <Text>{decodeHtml(props?.text)}</Text>
+        <Text dangerouslySetInnerHTML={{ __html: props?.text }} />
       )}
     </>
   );

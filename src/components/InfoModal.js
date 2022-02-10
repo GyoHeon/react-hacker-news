@@ -2,10 +2,6 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 function InfoModal(props) {
-  useEffect(() => {
-    console.log(props);
-  }, []);
-
   return (
     <Dim opened={props.open}>
       <Modal
@@ -46,6 +42,15 @@ const Dim = styled.div`
   left: 0;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.5);
+  animation: modal-dim 0.5s;
+  @keyframes modal-dim {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 const Modal = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -68,13 +73,13 @@ const Modal = styled.div`
       bottom: 0;
     }
   }
-
   header {
     width: 100%;
     height: 40px;
     margin-bottom: 20px;
   }
   h1 {
+    color: ${(props) => props.theme.textColor};
     font-size: 28px;
     font-weight: 500;
     padding-bottom: 32px;
@@ -97,6 +102,7 @@ const Modal = styled.div`
 `;
 const ModalList = styled.li`
   background-color: ${(props) => props.theme.modalBtn};
+  color: ${(props) => props.theme.textColor};
   width: 100%;
   height: 48px;
   border-radius: 8px;
