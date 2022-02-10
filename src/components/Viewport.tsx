@@ -8,6 +8,7 @@ const View = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
   width: 100%;
   height: 768px;
+  overflow: scroll;
 `;
 
 export default Viewport;

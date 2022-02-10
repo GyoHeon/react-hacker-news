@@ -20,7 +20,6 @@ function Description() {
       const obj: object = await fetchArticle(id);
       setData(obj);
     })();
-    console.log(data);
   }, []);
 
   return (

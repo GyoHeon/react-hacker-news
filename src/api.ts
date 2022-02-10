@@ -1,13 +1,13 @@
 const BASE_URL = `https://hacker-news.firebaseio.com/v0`;
 
-type obj = {
+interface obj {
   nums: number[];
   start: number;
   end: number;
-};
+}
 
 export async function fetchNums(field: string = `top`) {
-  const json: any = await fetch(`${BASE_URL}/${field}stories.json`).then(
+  const json: number[] = await fetch(`${BASE_URL}/${field}stories.json`).then(
     (response) => response.json()
   );
   return json;
