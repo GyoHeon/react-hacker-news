@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import InfoModal from "./InfoModal";
 
 function Header({ toggle }: any) {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const modalToggle = () => {
+    setOpenModal(!openModal);
+  };
+
   return (
     <Head>
       <Link to="/">
@@ -10,9 +18,12 @@ function Header({ toggle }: any) {
       </Link>
       <section>
         <button onClick={toggle}>
-          <img alt="Theme change buton" />
+          <img className="themeBtn" alt="Theme change button" />
         </button>
-        <img src="image/infoBtn.png" alt="Info button" />
+        <button onClick={modalToggle}>
+          <img src="image/infoBtn.png" alt="Info button" />
+          <InfoModal open={openModal} />
+        </button>
       </section>
     </Head>
   );
@@ -45,18 +56,20 @@ const Head = styled.header`
   }
   section {
     margin: 14px 20px 14px;
-    img {
+    button {
       width: 32px;
       height: 32px;
       margin-left: 8px;
-      &:first-child {
+      &:hover {
+        cursor: pointer;
+      }
+      img {
         display: block;
         width: 32px;
         height: 32px;
-        content: url(${(props) => props.theme.header.themeBtn});
       }
-      &:hover {
-        cursor: pointer;
+      .themeBtn {
+        content: url(${(props) => props.theme.header.themeBtn});
       }
     }
   }

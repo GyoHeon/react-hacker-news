@@ -9,6 +9,7 @@ const View = styled.div`
   width: 100%;
   height: 768px;
   overflow: scroll;
+  position: relative;
 `;
 
 export default Viewport;

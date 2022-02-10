@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Draggable from "react-draggable";
+import ProfileModal from "./ProfileModal";
 
 type AData = {
   descendants: number;
@@ -31,6 +32,11 @@ function ListItem({
   const [timeD, setTimeD] = useState<string>("");
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isControlled, setIsControlled] = useState<boolean>(true);
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const modalToggle = () => {
+    setOpenModal(!openModal);
+  };
 
   useEffect(() => {
     let newTime = Math.floor((Date.now() / 1000 - time) / 60);
@@ -76,10 +82,13 @@ function ListItem({
             <h1>{title}</h1>
           </Link>
           <section>
-            <div className="author">
-              <span>{by}</span>
-              <img src="image/rightArrow.svg" alt="right arrow" />
-            </div>
+            <button onClick={modalToggle}>
+              <div className="author">
+                <span>{by}</span>
+                <img src="image/rightArrow.svg" alt="right arrow" />
+              </div>
+              <ProfileModal open={openModal} data={by} />
+            </button>
             <div className="side">
               <div className="point">
                 <img alt="point" />

@@ -42,6 +42,7 @@ declare module "styled-components" {
       btnPoint: string;
       shadow: string;
     };
+    modalBtn: string;
     textMenuColor: string;
     textAuthorColor: string;
     textCommentColor: string;
