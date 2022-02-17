@@ -141,6 +141,7 @@ const Box = styled.div<IBox>`
     justify-content: space-between;
     align-items: center;
     .author {
+      background-color: ${(props) => props.theme.listItem.backgroundColor};
       color: ${(props) => props.theme.listItem.textAuthor};
       display: flex;
       align-items: center;
