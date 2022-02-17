@@ -52,7 +52,7 @@ function Ask() {
 
   return (
     <Viewport>
-      <Header toggle={toggleTheme} mode={ThemeMode} />
+      <Header />
       <Nav />
       <List datas={articleDatas} />
     </Viewport>

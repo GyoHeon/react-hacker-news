@@ -24,7 +24,7 @@ function Jobs() {
 
   return (
     <Viewport>
-      <Header toggle={toggleTheme} mode={ThemeMode} />
+      <Header />
       <Nav />
       <List datas={articleDatas}></List>
     </Viewport>

@@ -47,7 +47,7 @@ function Home() {
 
   return (
     <Viewport>
-      <Header toggle={toggleTheme} mode={ThemeMode} />
+      <Header />
       <Nav isHome={true} />
       <TotalRank datas={totalRankDatas} />
       <List datas={articleDatas}></List>

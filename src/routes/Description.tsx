@@ -24,7 +24,7 @@ function Description() {
 
   return (
     <Viewport>
-      <Header toggle={toggleTheme} mode={ThemeMode} />
+      <Header />
       <Nav />
       <Desc props={data} />
       <Comment props={data} />

@@ -40,7 +40,7 @@ function Show() {
 
   return (
     <Viewport>
-      <Header toggle={toggleTheme} mode={ThemeMode} />
+      <Header />
       <Nav />
       <List datas={articleDatas}></List>
     </Viewport>

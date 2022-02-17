@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import InfoModal from "./InfoModal";
 
-function Header({ toggle }: any) {
+function Header() {
   const dispatch = useDispatch<Dispatch<any>>();
   const [openModal, setOpenModal] = useState<boolean>(false);
 
