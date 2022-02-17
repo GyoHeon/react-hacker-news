@@ -1,18 +1,20 @@
-import { whiteTheme, darkTheme } from "./styles/theme";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProviderToggle } from "./context/ThemeProvider";
 import { SortProviderToggle } from "./context/SortProvider";
-// import { ModalsProvider } from "./context/ModalsProvider";
+import rootReducer from "./store/index";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProviderToggle>
+    <Provider store={store}>
       <SortProviderToggle>
         <App />
       </SortProviderToggle>
-    </ThemeProviderToggle>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

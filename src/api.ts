@@ -20,6 +20,13 @@ export async function fetchNums(field: string = `top`) {
   return json;
 }
 
+export async function fetchArticle(num: number) {
+  const obj: object = await fetch(`${BASE_URL}/item/${num}.json`).then(
+    (response) => response.json()
+  );
+  return obj;
+}
+
 export async function fetchArticles(
   nums: number[],
   start: number,
@@ -34,11 +41,4 @@ export async function fetchArticles(
     })
   );
   return objArr;
-}
-
-export async function fetchArticle(num: number) {
-  const obj: object = await fetch(`${BASE_URL}/item/${num}.json`).then(
-    (response) => response.json()
-  );
-  return obj;
 }

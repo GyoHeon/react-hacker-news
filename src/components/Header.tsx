@@ -1,13 +1,21 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Dispatch, useState } from "react";
+import { useDispatch } from "react-redux";
+
+import styled from "styled-components";
 import InfoModal from "./InfoModal";
 
 function Header({ toggle }: any) {
+  const dispatch = useDispatch<Dispatch<any>>();
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   const modalToggle = () => {
     setOpenModal(!openModal);
+  };
+
+  const themeChangeHanlder = (e: any) => {
+    e.preventDefault();
+    dispatch({ type: "CHANGE" });
   };
 
   return (
@@ -17,7 +25,7 @@ function Header({ toggle }: any) {
         <h1>ReHacker News</h1>
       </Link>
       <section>
-        <button onClick={toggle}>
+        <button onClick={themeChangeHanlder}>
           <img className="themeBtn" alt="Theme change button" />
         </button>
         <button onClick={modalToggle}>
