@@ -4,8 +4,9 @@ const initialThemeState = { isWhite: true };
 
 const themeChange = (state = initialThemeState, action) => {
   switch (action.type) {
-    case "CHANGE":
+    case "THEMECHANGE":
       return { isWhite: !state.isWhite };
+      break;
     default:
       return { isWhite: state.isWhite };
   }

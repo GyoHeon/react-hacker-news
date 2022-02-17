@@ -15,7 +15,7 @@ function Header() {
 
   const themeChangeHanlder = (e: any) => {
     e.preventDefault();
-    dispatch({ type: "CHANGE" });
+    dispatch({ type: "THEMECHANGE" });
   };
 
   return (

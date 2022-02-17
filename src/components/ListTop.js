@@ -1,10 +1,28 @@
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 import styled from "styled-components";
 
-function ListTop({ mode, newSort, topSort }: any) {
+function ListTop() {
+  const dispatch = useDispatch();
+  const sortMode = useSelector((state) => state.sort.sortMode);
+
+  const sortNewHandler = (e) => {
+    e.preventDefault();
+    dispatch({ type: "NEW" });
+  };
+  const sortTopHandler = (e) => {
+    e.preventDefault();
+    dispatch({ type: "TOP" });
+  };
+
   return (
     <Top>
       <div>
-        <button onClick={newSort} className={mode === "new" ? "selected" : ""}>
+        <button
+          onClick={sortNewHandler}
+          className={sortMode === "new" ? "selected" : ""}
+        >
           <svg
             width="20"
             height="20"
@@ -20,7 +38,10 @@ function ListTop({ mode, newSort, topSort }: any) {
           </svg>
           NEW
         </button>
-        <button onClick={topSort} className={mode === "top" ? "selected" : ""}>
+        <button
+          onClick={sortTopHandler}
+          className={sortMode === "top" ? "selected" : ""}
+        >
           <svg
             width="20"
             height="20"

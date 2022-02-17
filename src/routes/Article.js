@@ -4,19 +4,17 @@ import Viewport from "../components/Viewport";
 import List from "../components/List";
 import { useEffect, useState } from "react";
 import { fetchNums, fetchArticles } from "../api";
-import { useTheme } from "../context/ThemeProvider";
-import { useSort } from "../context/SortProvider";
+import { useSelector } from "react-redux";
 
 function Article() {
+  const sortMode = useSelector((state) => state.sort.sortMode);
   const [loading, setLoading] = useState(true);
-  const [articleDatas, setArticleDatas] = useState<object[]>([]);
-  const [articleNums, setArticleNums] = useState<number[]>([]);
-  const [ThemeMode, toggleTheme] = useTheme();
-  const [SortMode, newSort, topSort] = useSort();
+  const [articleDatas, setArticleDatas] = useState([]);
+  const [articleNums, setArticleNums] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const json: number[] = await fetchNums();
+      const json = await fetchNums();
       setArticleNums(json);
       setLoading(false);
     })();
@@ -24,14 +22,14 @@ function Article() {
 
   useEffect(() => {
     (async () => {
-      const sortNums: number[] = [...articleNums];
-      if (SortMode === "new") {
-        sortNums.sort((a: number, b: number) => b - a);
+      const sortNums = [...articleNums];
+      if (sortMode === "new") {
+        sortNums.sort((a, b) => b - a);
       }
-      const objArr: any = await fetchArticles(sortNums, 0, 10);
+      const objArr = await fetchArticles(sortNums, 0, 10);
       setArticleDatas(objArr);
     })();
-  }, [loading, SortMode]);
+  }, [loading, sortMode]);
 
   return (
     <Viewport>
