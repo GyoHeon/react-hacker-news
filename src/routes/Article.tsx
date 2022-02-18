@@ -6,7 +6,6 @@ import { RootState } from "../store";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
-import TotalRank from "../components/TotalRank";
 import List from "../components/List";
 
 interface ADatas {
@@ -20,11 +19,10 @@ interface ADatas {
   url?: string;
 }
 
-function Home() {
+function Article() {
   const sortMode = useSelector((state: RootState) => state.sort.sortMode);
   const [loading, setLoading] = useState<boolean>(true);
   const [articleNums, setArticleNums] = useState<number[]>([]);
-  const [totalRankDatas, setTotalRankDatas] = useState<ADatas[]>([]);
   const [articleDatas, setArticleDatas] = useState<ADatas[]>([]);
 
   useEffect(() => {
@@ -34,15 +32,6 @@ function Home() {
       setLoading(false);
     })();
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      const sortNums: number[] = [...articleNums];
-
-      const objArr: any = await fetchArticles(sortNums, 0, 5);
-      setTotalRankDatas(objArr);
-    })();
-  }, [loading]);
 
   useEffect(() => {
     (async () => {
@@ -58,11 +47,10 @@ function Home() {
   return (
     <Viewport>
       <Header />
-      <Nav isHome={true} />
-      <TotalRank datas={totalRankDatas} />
+      <Nav />
       <List datas={articleDatas}></List>
     </Viewport>
   );
 }
 
-export default Home;
+export default Article;

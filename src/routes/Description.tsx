@@ -13,7 +13,6 @@ import Comment from "../components/Comment";
 function Description() {
   const { id }: any = useParams();
   const [data, setData] = useState<object>();
-  const [ThemeMode, toggleTheme] = useTheme();
 
   useEffect(() => {
     (async () => {

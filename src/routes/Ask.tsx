@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
+import { fetchNums, fetchArticles } from "../api";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 import List from "../components/List";
-import { useEffect, useState } from "react";
-import { fetchNums, fetchArticles } from "../api";
-import { useTheme } from "../context/ThemeProvider";
-import { useSort } from "../context/SortProvider";
-import InfoModal from "../components/InfoModal";
 
 interface ADatas {
   descendants: number;
@@ -20,11 +20,10 @@ interface ADatas {
 }
 
 function Ask() {
-  const [loading, setLoading] = useState(true);
+  const sortMode = useSelector((state: RootState) => state.sort.sortMode);
+  const [loading, setLoading] = useState<boolean>(true);
   const [articleNums, setArticleNums] = useState<number[]>([]);
   const [articleDatas, setArticleDatas] = useState<ADatas[]>([]);
-  const [ThemeMode, toggleTheme] = useTheme();
-  const [SortMode, newSort, topSort] = useSort();
 
   useEffect(() => {
     (async () => {
@@ -37,7 +36,7 @@ function Ask() {
   useEffect(() => {
     (async () => {
       const sortNums: number[] = [...articleNums];
-      if (SortMode === "new") {
+      if (sortMode === "new") {
         sortNums.sort((a: number, b: number) => b - a);
       }
       const objArr: any = (await fetchArticles(sortNums, 0, 10)).map((data) => {
@@ -48,7 +47,7 @@ function Ask() {
       });
       setArticleDatas(objArr);
     })();
-  }, [loading, SortMode]);
+  }, [loading, sortMode]);
 
   return (
     <Viewport>

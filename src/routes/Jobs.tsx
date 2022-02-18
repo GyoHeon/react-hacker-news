@@ -1,15 +1,25 @@
+import { useEffect, useState } from "react";
+import { fetchNums, fetchArticles } from "../api";
+
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
 import List from "../components/List";
-import { useEffect, useState } from "react";
-import { fetchNums, fetchArticles } from "../api";
-import { useTheme } from "../context/ThemeProvider";
+
+interface ADatas {
+  descendants: number;
+  id: number;
+  score: number;
+  time: number;
+  text: string;
+  by: string;
+  title: string;
+  url?: string;
+}
 
 function Jobs() {
-  const [loading, setLoading] = useState(true);
-  const [articleDatas, setArticleDatas] = useState<object[]>([]);
-  const [ThemeMode, toggleTheme] = useTheme();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [articleDatas, setArticleDatas] = useState<ADatas[]>([]);
 
   useEffect(() => {
     (async () => {
