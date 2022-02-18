@@ -5,7 +5,6 @@ import Ask from "./routes/Ask";
 import Jobs from "./routes/Jobs";
 import Article from "./routes/Article";
 import Show from "./routes/Show";
-import Desc from "./components/Desc";
 import Description from "./routes/Description";
 
 interface RouteObject {

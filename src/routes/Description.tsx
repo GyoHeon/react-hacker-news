@@ -1,12 +1,10 @@
-import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { fetchArticle } from "../api";
+import { useParams } from "react-router-dom";
+
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Viewport from "../components/Viewport";
-import { useEffect, useState } from "react";
-import { fetchArticle } from "../api";
-import { useTheme } from "../context/ThemeProvider";
-import { useParams } from "react-router-dom";
-import InfoModal from "../components/InfoModal";
 import Desc from "../components/Desc";
 import Comment from "../components/Comment";
 
