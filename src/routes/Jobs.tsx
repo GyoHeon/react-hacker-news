@@ -33,11 +33,10 @@ function Jobs() {
   }, []);
 
   return (
-    <Viewport>
-      <Header />
+    <>
       <Nav />
-      <List datas={articleDatas}></List>
-    </Viewport>
+      <List datas={articleDatas} />
+    </>
   );
 }
 

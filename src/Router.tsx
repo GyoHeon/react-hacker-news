@@ -6,6 +6,7 @@ import Jobs from "./routes/Jobs";
 import Article from "./routes/Article";
 import Show from "./routes/Show";
 import Description from "./routes/Description";
+import Layout from "./components/Layout";
 
 interface RouteObject {
   element?: React.ReactNode;
@@ -17,12 +18,15 @@ function Router<RouteObject>() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <MobileFrame>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Article" element={<Article />} />
-          <Route path="/Show" element={<Show />} />
-          <Route path="/Ask" element={<Ask />} />
-          <Route path="/Jobs" element={<Jobs />} />
-          <Route path="/:menu/:id" element={<Description />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/Article" element={<Article />} />
+            <Route path="/Show" element={<Show />} />
+            <Route path="/Ask" element={<Ask />} />
+            <Route path="/Jobs" element={<Jobs />} />
+            <Route path="/:menu/:id" element={<Description />} />
+          </Route>
+
           <Route
             path="*"
             element={

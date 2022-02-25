@@ -50,11 +50,10 @@ function Ask() {
   }, [loading, sortMode]);
 
   return (
-    <Viewport>
-      <Header />
+    <>
       <Nav />
       <List datas={articleDatas} />
-    </Viewport>
+    </>
   );
 }
 

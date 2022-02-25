@@ -20,12 +20,11 @@ function Description() {
   }, []);
 
   return (
-    <Viewport>
-      <Header />
+    <>
       <Nav />
       <Desc props={data} />
       <Comment props={data} />
-    </Viewport>
+    </>
   );
 }
 

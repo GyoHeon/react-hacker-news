@@ -56,12 +56,11 @@ function Home() {
   }, [loading, sortMode]);
 
   return (
-    <Viewport>
-      <Header />
+    <>
       <Nav isHome={true} />
       <TotalRank datas={totalRankDatas} />
       <List datas={articleDatas}></List>
-    </Viewport>
+    </>
   );
 }
 
